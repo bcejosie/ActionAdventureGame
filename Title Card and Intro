@@ -1,32 +1,53 @@
-#Title screen code
-Title_Card = """                                                                                      =                                                                       
-               *                             +                                       %                                 =                                      
-              :%                            .+                                *     +                                 .*                                      
-        .     @.     -                     :%.     -                          %    .@     =                      :    #:     -                                
-         #    @      +-                #    %      --                          :  : @      +                     %    #.     .=                               
-         %+ # -@      @@               @# - *@      -%                         @. : @#      #.                   %# - +@    * -@                              
-        - @.   @@+:   @@@@+           - @    #@+- .   *@*                     :.@    @@-:    .@@:               - %.   *@+- .   %@%-                          
-         :@@.  @@#    @+-@@@*@@@*      .@@=  @@@    -:  %@@%%@#+:              #@@. -@@: +  :@@@@@@%%*=           @@+  @@@    +@@@@@*%%@#+-                   
-          :@@+ -@+    @    %@@@@@%@@    -@@@  @@     :@@    :@@@@@@@@#          #@@. @@      #@@@@%@@@@@@#        .@@@  @@      @@@@@*@@@@@                   
-           @#:# @#         -@@@   %*     #* @ @@     .@@@@-. :   .@@@@-          @ #+ @. :   #@@@+    +@#          **.@ @@      @@@%    *@+                   
-           :+  @#@%@       +@@@   :-     -+  @*@*@    @@@@        +@@%           @. +@@@*@    @@@.   @@@           :+  @+@#@    -@@@   *@@@                   
-            @   .@@#       @@@-          .@:   @@#    @@@%  @@%+  :@@+           %@   =@@=   -@@@    @@@:           @-   @@#-   @@@+  #@@-                    
-           =+    @@@       .@@@          --    @@*    @@@-  @@@@   @@@           @    +@@.  -%@@#    @@@*          -+    @@#   %@@@@  %                       
-           #.   = @@  .   %@@@@          #-  .= #%    @@@+  @@@%   %@@           @  . = @* = +@@@    @@@*          #=  .= #@  -@@@@%-                         
-           %    :  @.     @@@@@ =        %    :  @=   @@@*  @@@@  %@@@          -+       @   .@@@@@=@@@@*          %    -  @.   @@@@++:  =#                   
-          +%@@%%@@ %@      =@@@-        *%@@#@@@ =@  -@@@*  %@@@   :@@          %%@@%@@* @%  :@@  @@@@@@=         *%@@%@@@ -@   %@@@+@@@@+                    
-         -@@@      @@-     %@@@        .@@#    ::@@- :@@@.  @@@:   @@%         %@@:     +@@  :@@@*  *@@@         .@@#     .@@:  @@@@   @                      
-        + @@ .     =@.*    %@@        - @@:*     :@ . @@@-   @@%   @@@        % @@       @@ *:@@@  : @@@=       : %@-%      @.  %@@                           
-       @. =@        %* :   @@@@      %. =@.   .   @+  @@%#*@@@@@@: #@@       @  %#:       @. +@@+    @@@-      #: =@:   -   @+  @@@@                          
-     .    %@.   #   #      %@@+    .    @@-   %   @   @@@@@@@--@@@+%@@         -@%.   @   *  -@@@    @@@-    .    @@-   #   @   %@@%                          
-          :@@    *@@@     --%@@          @%    +%@@   *@@@@#  -@@@%@@*          +@:   .*@@-  +@@@    @@+           @#    +%@@   #@@@                          
-           +@     :@@#     @@@@:         =@     -@@#+%@@@@      +@@@@@.          @#     *@@#%@@@@ : :@@@+          -@     .@@@@@@@@@                          
-          : #@-    :%@@@@%%@@@@ -       * =@.    .%@@@@@*   :.     %@@=           @@     @@@@@@@@+     :@+        + -@:     %@@@@@@@                          
-          .   @%        *-@@@@@#        +   @#        #=@@@@@* :                   .@=        **@@@@@@#           =   %%        *=@@@@@#.                     
-           ++   %*            :+@@@@@@#- #*   %%            .=#@@@@@%=           %=  -@+            :+%@@@@@*.     =#   %%            .=#@@@@@%=              
-            +=%:   .##%                 =@@@@*   .%*%.                =@@@@*.     %*#    :%#@                 *@@@%-*=@-   .@#%=                -@@@@*.       
-                 %%%=         ==*%@@%.     #   %@%+         =+*%@@#           .*      =%%#.         ++#@@@*          @+*:%%%*         =+*%@@%.          :*    
-                      .=+#@@@@@++*                  ==+*%@@@@***                  -         :=*#@@@@%+#.                       -+*%@@@@*+#                    
-          .-:=-=%%%%##+-.               .-:--=%@%%##+-.                         :-:=-+%%%%#*+-                    .-:--=%@%%##*=.                             
-                                                                                                                                       """
-print(Title_Card)
+import time 
+
+title_card = open("title_card.txt", "r")
+print(title_card.read())
+title_card.close()
+
+time.sleep(2)
+
+first_intro = open("first_intro.txt", "r")
+print(first_intro.read())
+first_intro.close()
+
+time.sleep(1)
+
+intropart2 = [
+    "The mid-morning sun pierces through the thin curtains fluttering around your bedroom window.","...",
+    "You sit up sharply and shake the tiredness out of your eyes.",
+    "Just like any other day, there’s no time to lie in.",
+    "Almost out of instinct, your hand grabs for the pen that is perpetually placed atop your bedside table.",
+    "You use this pen to cross the previous day off the calendar haphazardly placed over your bed.",
+    "'Just three weeks,' you say to yourself.",
+    "'Three weeks more at Freddy's.'",
+    "...",
+    "Hi here!",
+    "Welcome to my game! Thanks for picking it up!",
+    "This is a text-based game, so you will be reading a lot of text.",
+    "But I hope you enjoy it anyway! :)",
+    "You will also be making choices that will affect the endings that you can get!.",
+    "So choose wisely!"]
+
+print("Press enter to continue...")
+
+#THE MAIN INTRO
+def main_intro():
+    for sentence in intropart2:
+        print(sentence)
+        player_input = input()
+        if player_input == "":
+            pass
+        elif player_input == "skip":
+            break
+        else: 
+            print("Invalid input. Please press enter to continue or type 'skip' to skip the intro.")
+            pass
+
+main_intro()
+
+time.sleep(1)
+
+user_name = (input("What would you like to be called in this game? XD:"))
+print( "Hiya",user_name, "!" )
+freddy_name =(input("What do you wanna call your friend Freddy? :) "))
+print( "Great! Your friend will be called", freddy_name, ".")
