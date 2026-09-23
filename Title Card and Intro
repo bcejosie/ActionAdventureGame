@@ -1,161 +1,3 @@
-import time 
-
-title_card = open("title_card.txt", "r")
-print(title_card.read())
-title_card.close()
-
-time.sleep(2)
-
-first_intro = open("first_intro.txt", "r")
-print(first_intro.read())
-first_intro.close()
-
-time.sleep(1)
-
-intropart2 = [
-    "The mid-morning sun pierces through the thin curtains fluttering around your bedroom window.","...",
-    "You sit up sharply and shake the tiredness out of your eyes.",
-    "Just like any other day, there’s no time to lie in.",
-    "Almost out of instinct, your hand grabs for the pen that is perpetually placed atop your bedside table.",
-    "You use this pen to cross the previous day off the calendar haphazardly placed over your bed.",
-    "'Just three weeks,' you say to yourself.",
-    "'Three weeks more at Freddy's.'",
-    "...",
-    "Hi here!",
-    "Welcome to my game! Thanks for picking it up!",
-    "This is a text-based game, so you will be reading a lot of text.",
-    "But I hope you enjoy it anyway! :)",
-    "You will also be making choices that will affect the endings that you can get!.",
-    "So choose wisely!"]
-
-print("Press enter to continue...")
-
-#THE MAIN INTRO
-def main_intro():
-    for sentence in intropart2:
-        print(sentence)
-        player_input = input()
-        if player_input == "":
-            pass
-        elif player_input == "skip":
-            break
-        else: 
-            print("Invalid input. Please press enter to continue or type 'skip' to skip the intro.")
-            pass
-
-main_intro()
-
-time.sleep(1)
-
-user_name = (input("What would you like to be called in this game? XD:"))
-print( "Hiya",user_name, "!" )
-freddy_name =(input("What do you wanna call your friend Freddy? :) "))
-print( "Great! Your friend will be called", freddy_name, ".")
-
------
-import time 
-
-title_card = open("title_card.txt", "r")
-print(title_card.read())
-title_card.close()
-
-time.sleep(2)
-
-def the_mainer_intro():
-    user_name = (input("What would you like to be called in this game? XD:" ))
-    print("Hiya",user_name, "!" )
-    time.sleep(2)
-    freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
-    print( "Great! Your friend will be called", freddy_name, ".")
-
-first_intro = [
-"You play this gamee by typing your response into the terminal.", 
-"Press the enter key to continue.",
-".",
-".",
-"."
-]
-
-def first_intro1 ():
-    print (first_intro [0])
-    time.sleep(2)
-    print (first_intro [1])
-    time.sleep(1)
-    print (first_intro [2])
-    time.sleep(1)
-    print (first_intro [3])
-    time.sleep(1)
-    print (first_intro [4])
-    time.sleep(1)
-
-first_intro1()
-
-intropart2 = [
-    "The mid-morning sun pierces through the thin curtains fluttering around your bedroom window.","...",
-    "You sit up sharply and shake the tiredness out of your eyes.",
-    "Just like any other day, there’s no time to lie in.",
-    "Almost out of instinct, your hand grabs for the pen that is perpetually placed atop your bedside table.",
-    "You use this pen to cross the previous day off the calendar haphazardly placed over your bed.",
-    "'Just three weeks,' you say to yourself.",
-    "'Three weeks more at Freddy's.'",
-    "...",
-    "Hi here!",
-    "Welcome to my game! Thanks for picking it up!",
-    "This is a text-based game, so you will be reading a lot of text.",
-    "But I hope you enjoy it anyway! :)",
-    "You will also be making choices that will affect the endings that you can get!.",
-    "So choose wisely!"]
-
-#THE MAIN INTRO
-def main_intro():
-    for sentence in intropart2:
-        print(sentence)
-        player_input = input()
-        if player_input == "":
-            pass
-        elif player_input == "skip":
-            break
-        else: 
-            print("Invalid input. Please press enter to continue or type 'skip' to skip the intro.")
-            pass
-
-main_intro()
-
-time.sleep(1)
-
-def have_you_played():
-
-    player_is_correct1 = False
-    
-    while not player_is_correct1:
-    
-        have_you_played1 = input("Have you played this game before? (yes/no): ").lower()
-
-        if have_you_played1 == "yes":
-            print("Okay, I’ll let you get to it.")
-            time.sleep(2)
-            print("Choose wisely as your choices affect your game from now on!!!")
-            player_is_correct1 = True
-
-            time.sleep(2)
-
-            title_line = open("title_line.txt", "r")
-            print(title_line.read())
-            title_line.close()
-
-        elif have_you_played1 == "no":
-            print("Coolio! Lemme help you get started! XD")
-            player_is_correct1 = True
-            the_mainer_intro()
-    
-        elif have_you_played1 != "yes" and have_you_played1 != "no":
-            print("Yes or no, bro XD")
-            player_is_correct1 = False
-
-have_you_played()
-
-______________
-
 import time
 
 title_card = open("title_card.txt", "r")
@@ -166,15 +8,59 @@ time.sleep(2)
 
 #functions to use for later
 def the_mainer_intro():
+    
     user_name = (input("What would you like to be called in this game? XD:" ))
     print("Hiya",user_name, "!" )
-    time.sleep(2)
+
+    time.sleep(1)
+
     freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
     print( "Great! Your friend will be called", freddy_name, ".")
 
-    lets_get_started = [ "Allow me to explain what's going on here...", 
+    time.sleep(1)
+
+    lets_get_started1 = [ "Allow me to explain what's going on here...",
+                        "It's been 9 months since the water stopped flowing through the taps",
+                        "10 since the wifi went down"
                         ]
 
+    lets_get_started2 = ["There’s been some kind of prodigious apocalypse but you can’t for the life of you figure out what happened outside.",
+                        "You’ve had to barricade yourselves inside your house to keep away hungry animals and… people who may try to take you supplies.", 
+                        "Although you’ve been very weary of strangers for the first 9 months of your impossible situation, tensions between you and your friend Fredrick have almost reached their limits.",
+                        "You aren’t sure what will happen if you completely fall out with your friend but you are sure the results would be disastrous.", 
+                        "Maybe you can find it in yourself to invite others into your fortified compound.", 
+                        "Maybe", 
+                        "…", 
+                        ] 
+
+    player_action1 = ["Press a to check on your friend" ,freddy_name, ".", 
+                       "Press a to go downstairs", 
+                       "Press a to outside", 
+                       "Press a to collect rainwater",
+                       "Press a  to go back inside"
+    ]
+
+    for sentence in lets_get_started1:
+            print(sentence)
+            player_input = input()
+            if player_input == "":
+                pass
+            elif player_input == "skip":
+                break
+            else: 
+                print("Invalid input. Please press enter to continue or type 'skip' to skip the intro.")
+                pass
+
+    print(player_action1 [0])
+    downstairs_choice = input().lower()
+
+    while downstairs_choice != "a":
+        downstairs_choice = input("unidentifiable input please try again: ").lower()
+
+        print()
+
+
+the_mainer_intro()
 
 #First messages
 first_intro = [
