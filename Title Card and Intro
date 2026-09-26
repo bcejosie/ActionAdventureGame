@@ -1,5 +1,105 @@
 import time
 
+def the_mainer_intro(lets_get_started1, lets_get_started2, user_name, freddy_name, player_action1):
+    #lists of prompts and text
+    lets_get_started2 = ["There’s been some kind of prodigious apocalypse but you can’t for the life of you figure out what happened outside.",
+                    "You’ve had to barricade yourselves inside your house to keep away hungry animals and… people who may try to take you supplies.", 
+                    "Although you’ve been very weary of strangers for the first 9 months of your impossible situation, tensions between you and your friend Fredrick have almost reached their limits.",
+                    "You aren’t sure what will happen if you completely fall out with your friend but you are sure the results would be disastrous.", 
+                    "Maybe you can find it in yourself to invite others into your fortified compound.", 
+                    "Maybe", 
+                    "…", 
+                        ] 
+
+    lets_get_started1 = [ "Allow me to explain what's going on here...",
+                    "It's been 9 months since the water stopped flowing through the taps",
+                    "10 since the wifi went down"
+                        ]
+
+    user_name = (input("What would you like to be called in this game? XD:" ))
+
+    print(f"Hiya {user_name}!" )
+    time.sleep(2)
+
+    freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
+    print( f"Great! Your friend will be called {freddy_name}.")
+    time.sleep(2)
+
+    player_action1 = [f"Press a to check on your friend {freddy_name}", 
+                    "Press b to go downstairs", 
+                    "Press c to outside", 
+                    "Press d to check on the fences",
+                    "Press e to collect rainwater",
+                    "Press f to go back inside",
+                    "Press g to start making plans"
+    ]
+
+    print ("Press enter to continue...")
+
+    time.sleep(2)
+
+    for sentence in lets_get_started1:
+            print(sentence)
+            player_input = input()
+            if player_input == "":
+                pass
+            elif player_input == "skip":
+                break
+            else: 
+                print("Invalid input. Please press enter to continue or type 'skip' to skip the intro.")
+                pass
+
+    time.sleep(1)
+
+    print(player_action1[0])
+    player_input = input().lower()
+    while player_input != "a":
+        player_input = input("unidentifiable input please try again: ").lower()
+    print(lets_get_started2[0])
+    time.sleep(2)
+
+    print(player_action1[1])
+    player_input = input().lower()
+    while player_input != "b":
+        player_input = input("unidentifiable input please try again: ").lower()
+    print(lets_get_started2[1])
+    time.sleep(1)
+
+    print(player_action1[2])
+    player_input = input().lower()
+    while player_input != "c":
+        player_input = input("unidentifiable input please try again: ").lower()
+    print(lets_get_started2[2])
+    time.sleep(1)
+
+    print(player_action1[3])
+    player_input = input().lower()
+    while player_input != "d":
+        player_input = input("unidentifiable input please try again: ").lower()
+    print(lets_get_started2[3])
+    time.sleep(1)
+
+    print(player_action1[4])
+    player_input = input().lower()
+    while player_input != "e":
+        player_input = input("unidentifiable input please try again: ").lower()
+    print(lets_get_started2[4])
+    time.sleep(1)
+
+    print(player_action1[5])
+    player_input = input().lower()
+    while player_input != "f":
+        player_input = input("unidentifiable input please try again: ").lower()
+    print(lets_get_started2[5])
+    time.sleep(1)
+
+    print(player_action1[6])
+    player_input = input().lower()
+    while player_input != "g":
+        player_input = input("unidentifiable input please try again: ").lower()
+    print(lets_get_started2[6])
+    time.sleep(1)
+
 title_card = """
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄▄     ▄▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄▄▄▄▄▄    ·  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 ▄             ░ ░▒▓░ ▄      ▓     ▄      █  ▄▀            ▀▄   ▄▀         ░ ░▒▓░
@@ -14,83 +114,30 @@ title_card = """
   ░ · █┼┼┼┼┼┼┼▓ ░░░   ▀▄┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼▄▀  █┼┼┼┼┼┼▓  █┼┼┼┼┼┼▓ █┼┼┼┼┼┼▓  ░▒▓█▓▒░ 
  ·    ▀▀▀▀▀▀▀▀▀  ░ ·    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀    ▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀  ·░▒▓▒░  """
 
+print(title_card)
 time.sleep(2)
 
-#functions to use for later
-def the_mainer_intro():
-    
-    user_name = (input("What would you like to be called in this game? XD:" ))
-    print("Hiya",user_name, "!" )
-
-    time.sleep(1)
-
-    freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
-    print( "Great! Your friend will be called", freddy_name, ".")
-
-    time.sleep(1)
-
-    lets_get_started1 = [ "Allow me to explain what's going on here...",
-                        "It's been 9 months since the water stopped flowing through the taps",
-                        "10 since the wifi went down"
-                        ]
-
-    lets_get_started2 = ["There’s been some kind of prodigious apocalypse but you can’t for the life of you figure out what happened outside.",
-                        "You’ve had to barricade yourselves inside your house to keep away hungry animals and… people who may try to take you supplies.", 
-                        "Although you’ve been very weary of strangers for the first 9 months of your impossible situation, tensions between you and your friend Fredrick have almost reached their limits.",
-                        "You aren’t sure what will happen if you completely fall out with your friend but you are sure the results would be disastrous.", 
-                        "Maybe you can find it in yourself to invite others into your fortified compound.", 
-                        "Maybe", 
-                        "…", 
-                        ] 
-
-    player_action1 = ["Press a to check on your friend" ,freddy_name, ".", 
-                       "Press a to go downstairs", 
-                       "Press a to outside", 
-                       "Press a to collect rainwater",
-                       "Press a  to go back inside"
-    ]
-
-    for sentence in lets_get_started1:
-            print(sentence)
-            player_input = input()
-            if player_input == "":
-                pass
-            elif player_input == "skip":
-                break
-            else: 
-                print("Invalid input. Please press enter to continue or type 'skip' to skip the intro.")
-                pass
-
-    print(player_action1 [0])
-    downstairs_choice = input().lower()
-
-    while downstairs_choice != "a":
-        downstairs_choice = input("unidentifiable input please try again: ").lower()
-
-        print()
-
-
-the_mainer_intro()
-
-#First messages
+#FIRST MESSAGES
 first_intro = [
-"You play this gamee by typing your response into the terminal.", 
+"You play this game by typing your response into the terminal.", 
 "Press the enter key to continue.",
 ".",
 ".",
 "."
 ]
+
 def first_intro1 ():
-    print (first_intro [0])
+    print (first_intro[0])
     time.sleep(2)
-    print (first_intro [1])
+    print (first_intro[1])
     time.sleep(1)
-    print (first_intro [2])
+    print (first_intro[2])
     time.sleep(1)
-    print (first_intro [3])
+    print (first_intro[3])
     time.sleep(1)
-    print (first_intro [4])
+    print (first_intro[4])
     time.sleep(1)
+
 first_intro1()
 #First messages done
 
@@ -121,15 +168,15 @@ def main_intro():
         else: 
             print("Invalid input. Please press enter to continue or type 'skip' to skip the intro.")
             pass
+
 main_intro()
+
 #MAIN INTRO ENDS
 
-title_line = open("title_line.txt", "r")
-print(title_line.read())
-title_line.close()
-            
 
 #CHECKS IF THEY HAVE PLAYED
+have_you_played = "yep"
+
 def have_you_played():
 
     player_is_correct1 = False
@@ -154,12 +201,83 @@ def have_you_played():
         elif have_you_played1 == "no":
             print("Coolio! Lemme help you get started! XD")
             player_is_correct1 = True
-            the_mainer_intro()
+            the_mainer_intro(lets_get_started1, lets_get_started2, user_name, freddy_name, player_action1)
             break
 
-    
         elif have_you_played1 != "yes" and have_you_played1 != "no":
             print("Yes or no, bro XD")
             player_is_correct1 = False
+
 have_you_played()
 
+print("Let's view your stats...")
+
+#The STATS
+
+integrity =int(3)
+health = int(3)
+trust = int(3)
+supplies = int(3)
+
+def stat_checker1(integrity, health, trust, supplies):
+
+    #integrity
+    if integrity== 1:
+            print("Integrity = 1\n" "The intergrity of your compound is VERY low, please find a way to increase it...")
+    elif integrity== 2:
+            print("Integrity = 2\n" "The intergrity of your compound is low, you don't want it decrease any further.")
+    elif integrity== 3:
+            print("Integrity = 3\n" "The intergrity of your compound is okay, you'll be fine for a hot minute.")
+    elif integrity== 4: 
+            print("Integrity = 2\n" "The intergrity of your compound is pretty high, good job!")
+    elif integrity== 5:
+            print("Integrity = 5\n" "The intergrity of your compound is really high! You'd be able to defend a massive hoard now!")
+
+    time.sleep(2)
+
+    #Health
+    if health == 1:
+            print("Health = 1\n" "It's a wonder how you're still alive... Your supplies have been decreased due to needing medicine.")
+            supplies = supplies - 1
+            print ("Supplies now =", supplies)
+    elif health == 2:
+            print ("Health = 2\n" "You really don't want your household to get anymore ill, please find a way to get healthier.")
+    elif health == 3:
+            print ("Health = 3\n" "You're health is okay. You're not feeling too good or too bad at all.")
+    elif health == 4:
+            print ("Health = 4\n" "You're health is pretty good! You could surive an influenza or 2.")
+    elif health == 5:
+            print("Health = 5\n" "You're health is really good! You could run a 100m in 7s while you're this healthy!")
+
+    time.sleep(2)
+
+    #Trust
+    if health == 1:
+            print("Trust = 1\n" "Woah, how did you become so untrustworthy... You've noticed that supplies have been decreasing more than usual, a thief?")
+            supplies = supplies -1
+    elif health == 2:
+            print("Trust = 2\n" "Your houshold has little faith in you and your leadership. Find a way to settle their worries.")
+    elif health == 3:
+            print("Trust = 3\n" "Your household has trust in you and you have trust in them.")
+    elif health == 4:
+            print("Trust = 4\n" "Your household has quite a bit of trust in you. Good job, try to keep it that way!")
+    elif health == 5:
+            print ("Trust = 5\n" "Woah, your leadership skills are amazing! The people around you would jump of a cliff for you!")
+
+    time.sleep(2)
+
+    #Supplies
+    if supplies == 1:
+            print ("Supplies = 1\n" "Your household is starving... Your health has decreased.")
+            health = health - 1
+            print ("Health now =", health)
+    elif supplies == 2:
+            print ("Supplies = 2\n" "Your supplies are pretty low. If it gets any lower your family could starve..")
+    elif supplies == 3:
+            print ("Supplies = 3\n" "Your supplies are okay, try to increase them soon.")
+    elif supplies == 4:
+            print("Supplies = 4\n" "Your supplies are pretty good, let's keep it that way!")
+    elif supplies == 5: 
+            print ("Supplies = 5\n" "Woah, your supply level is REALLY good. Seriously, you've got so much there isn't anymore space to store stuff in the house...")
+
+stat_checker1(integrity, health, trust, supplies)
