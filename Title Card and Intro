@@ -149,7 +149,7 @@ while not player_is_correct1:
         def tutorial_part2(player_action_index):
             print(player_action1[player_action_index])
             player_input = int(input())
-            while player_input != 1:
+            while player_input != "":
                 player_input = int(input("unidentifiable input please try again: "))
             print(lets_get_started2[player_action_index])
             time.sleep(2)
@@ -236,3 +236,47 @@ def stat_checker(integrity, health, trust, supplies):
             print ("Supplies = 5\n" "Woah, your supply level is REALLY good. Seriously, you've got so much there isn't anymore space to store stuff in the house...")
 
 stat_checker(integrity, health, trust, supplies)
+
+import time
+
+freddy_name = "yepers"
+
+print("Knock, knock…")
+time.sleep(1)
+print("Wait, what?")
+time.sleep(1)
+print("KNOCK, KNOCK, KNOCK…")
+print("What was THAT?\n" "It was coming from the front door.")
+
+invalid_choice = True
+
+while invalid_choice == True:
+
+    player_input = int(input("Press 1 to check what on earth caused noise was; Press 2 to ignore, you’ve got stuff to do "))
+    
+    if player_input == 1:
+        print ("There’s…")
+        time.sleep(1)
+        print ("There’s a person there…")
+        time.sleep (1)
+        print ("You haven’t seen another person other than {freddy_name} in years. You almost start shaking, you’re so surprised.")
+        player_input = input("Do you wanna answer the door? ")
+        invalid_choice = False
+        break
+
+    elif player_input == 2:
+        print("You continue making plans for the day but your friend has a mind of their own.")
+        time.sleep(1)
+        print("When did they get out of bed? Goodness knows.")
+        time.sleep(1)
+        print("All you’re aware of is the fact that they opened the door to check whatever is making the ruckus outside...")
+        time.sleep(1)
+        print("WAIT, NO! STOP!")
+        time.sleep(1)
+        print("WE DON’T KNOW WHAT’S OUT THERE! NOOOOO!")
+        invalid_choice = False
+        break
+    else:
+        print("Invalid input bruh")
+        player_input = int(input("Press 1 to check what on earth caused noise was; Press 2 to ignore, you’ve got stuff to do "))
+        invalid_choice = True
