@@ -5,7 +5,7 @@ def TypeText(textToType):
       for chars in textToType:
             sys.stdout.write(chars)
             sys.stdout.flush()
-            time.sleep(.05)
+            time.sleep(.03)
 
 def doctor_event():
     the_doctor = open("the_doctor.txt", "r")
@@ -27,68 +27,90 @@ title_card = """
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀    ▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀  ·░▒▓▒░  
 """
 
-#FUNTIONS
+#FUNTIONS AND LISTS TO MAKE CODE MORE READABLE
+
 #THE STATS SYSYEM
+integrity =int(3)
+health = int(3)
+trust = int(3)
+supplies = int(3)
 def stat_checker(integrity, health, trust, supplies):
 
     #integrity
     if integrity== 1:
-            TypeText("Integrity = 1\n" "The intergrity of your compound is VERY low, please find a way to increase it...")
+            TypeText("\nIntegrity = 1\n" "The intergrity of your compound is VERY low, please find a way to increase it...")
     elif integrity== 2:
-            TypeText("Integrity = 2\n" "The intergrity of your compound is low, you don't want it decrease any further.")
+            TypeText("\nIntegrity = 2\n" "The intergrity of your compound is low, you don't want it decrease any further.")
     elif integrity== 3:
-            TypeText("Integrity = 3\n" "The intergrity of your compound is okay, you'll be fine for a hot minute.")
+            TypeText("\nIntegrity = 3\n" "The intergrity of your compound is okay, you'll be fine for a hot minute.")
     elif integrity== 4: 
-            TypeText("Integrity = 2\n" "The intergrity of your compound is pretty high, good job!")
+            TypeText("\nIntegrity = 2\n" "The intergrity of your compound is pretty high, good job!")
     elif integrity== 5:
-            TypeText("Integrity = 5\n" "The intergrity of your compound is really high! You'd be able to defend a massive hoard now!")
+            TypeText("\nIntegrity = 5\n" "The intergrity of your compound is really high! You'd be able to defend a massive hoard now!")
 
     time.sleep(2)
 
     #Health
     if health == 1:
-            TypeText("Health = 1\n" "It's a wonder how you're still alive... Your supplies have been decreased due to needing medicine.")
+            TypeText("\nHealth = 1\n" "It's a wonder how you're still alive... Your supplies have been decreased due to needing medicine.")
             supplies = supplies - 1
             TypeText ("Supplies now =", supplies)
     elif health == 2:
-            TypeText ("Health = 2\n" "You really don't want your household to get anymore ill, please find a way to get healthier.")
+            TypeText ("\nHealth = 2\n" "You really don't want your household to get anymore ill, please find a way to get healthier.")
     elif health == 3:
-            TypeText ("Health = 3\n" "You're health is okay. You're not feeling too good or too bad at all.")
+            TypeText ("\nHealth = 3\n" "You're health is okay. You're not feeling too good or too bad at all.")
     elif health == 4:
-            TypeText ("Health = 4\n" "You're health is pretty good! You could surive an influenza or 2.")
+            TypeText ("\nHealth = 4\n" "You're health is pretty good! You could surive an influenza or 2.")
     elif health == 5:
-            TypeText("Health = 5\n" "You're health is really good! You could run a 100m in 7s while you're this healthy!")
+            TypeText("\nHealth = 5\n" "You're health is really good! You could run a 100m in 7s while you're this healthy!")
 
     time.sleep(2)
 
     #Trust
     if trust == 1:
-            TypeText("Trust = 1\n" "Woah, how did you become so untrustworthy... You've noticed that supplies have been decreasing more than usual, a thief?")
+            TypeText("\nTrust = 1\n" "Woah, how did you become so untrustworthy... You've noticed that supplies have been decreasing more than usual, a thief?")
             supplies = supplies -1
     elif trust == 2:
-            TypeText("Trust = 2\n" "Your houshold has little faith in you and your leadership. Find a way to settle their worries.")
+            TypeText("\nTrust = 2\n" "Your houshold has little faith in you and your leadership. Find a way to settle their worries.")
     elif trust == 3:
-            TypeText("Trust = 3\n" "Your household has trust in you and you have trust in them.")
+            TypeText("\nTrust = 3\n" "Your household has trust in you and you have trust in them.")
     elif trust == 4:
-            TypeText("Trust = 4\n" "Your household has quite a bit of trust in you. Good job, try to keep it that way!")
+            TypeText("\nTrust = 4\n" "Your household has quite a bit of trust in you. Good job, try to keep it that way!")
     elif trust == 5:
-            TypeText("Trust = 5\n" "Woah, your leadership skills are amazing! The people around you would jump of a cliff for you!")
+            TypeText("\nTrust = 5\n" "Woah, your leadership skills are amazing! The people around you would jump of a cliff for you!")
 
     time.sleep(2)
 
     #Supplies
     if supplies == 1:
-            TypeText ("Supplies = 1\n" "Your household is starving... Your health has decreased.")
+            TypeText ("\nSupplies = 1\n" "Your household is starving - your health has decreased.\n")
             health = health - 1
             TypeText ("Health now =", health)
     elif supplies == 2:
-            TypeText ("Supplies = 2\n" "Your supplies are pretty low. If it gets any lower your family could starve..")
+            TypeText ("\nSupplies = 2\n" "Your supplies are pretty low. If it gets any lower your family could starve...\n")
     elif supplies == 3:
-            TypeText ("Supplies = 3\n" "Your supplies are okay, try to increase them soon.")
+            TypeText ("\nSupplies = 3\n" "Your supplies are okay, try to increase them soon.\n")
     elif supplies == 4:
-            TypeText("Supplies = 4\n" "Your supplies are pretty good, let's keep it that way!")
+            TypeText("\nSupplies = 4\n" "Your supplies are pretty good, let's keep it that way!\n")
     elif supplies == 5: 
-            TypeText ("Supplies = 5\n" "Woah, your supply level is REALLY good. Seriously, you've got so much there isn't anymore space to store stuff in the house...") in the house...")
+            TypeText ("\nSupplies = 5\n" "Woah, your supply level is REALLY good. Seriously, you've got so much there isn't anymore space to store stuff in the house...\n")
+
+#FIRST MESSAGES
+narrative1 = [
+    "The mid-morning sun pierces through the thin curtains fluttering around your bedroom window.\n"
+    "You sit up sharply and wipe the tiredness out of your eyes.                                           Press enter to continue...",
+    "Just like any other day, there’s no time to lie in.\n"
+    "Almost out of instinct, your hand grabs for the pen that is always placed atop your bedside table.    Press enter to continue...",
+    "You use this pen to cross the previous day off the calendar you'd placed above your bed."
+    "I can get through another few days', you say to yourself.\n"
+    "'Three weeks more at Freddy's.'                                                                       Press enter to continue...",
+    "\nHi here!\n"
+    "Welcome to my game! Thanks for picking it up!\n" "This is a text-based game, so you will be reading a lot of text."
+    "But I hope you enjoy it anyway! :)                                                                    Press enter to continue...",
+    "Choose between the numbers 1-3 to select an action"
+    "When prompted, simply select the enter key to continue.                                               Press enter to continue...",
+    "You will also be making choices that will affect the endings that you can get!.\n"
+    "So choose wisely! (Press enter one more time!) :D)\n"]
 
 print(title_card)
 
@@ -98,25 +120,9 @@ print ("You play this game by typing your response into the terminal.")
 time.sleep(2)
 print ("Press the enter key to continue.")
 time.sleep(1)
-print ("Type 'skip' then enter to skip the intro...")
+print ("Type 'skip' then enter to skip the intro...\n")
 
 #THE MAIN INTRO - The narrative messages
-narrative1 = [
-    "The mid-morning sun pierces through the thin curtains fluttering around your bedroom window.\n"
-    "You sit up sharply and wipe the tiredness out of your eyes.                                           Press enter to continue...",
-    "Just like any other day, there’s no time to lie in.\n"
-    "Almost out of instinct, your hand grabs for the pen that is always placed atop your bedside table.    Press enter to continue...",
-    "You use this pen to cross the previous day off the calendar you'd placed above your bed.\n"
-    "I can get through another few days', you say to yourself.\n"
-    "'Three weeks more at Freddy's.'                                                                       Press enter to continue...",
-    "Hi here!\n"
-    "Welcome to my game! Thanks for picking it up!                                                         Press enter to continue...",
-    "This is a text-based game, so you will be reading a lot of text.\n"
-    "But I hope you enjoy it anyway! :)                                                                    Press enter to continue...",
-    "Choose between the numbers 1-3 to select an action.\n"
-    "When prompted, simply select the enter key to continue.                                               Press enter to continue...",
-    "You will also be making choices that will affect the endings that you can get!.\n"
-    "So choose wisely! (Press enter one more time!) :D)"]
 
 for sentence in narrative1:
     TypeText(sentence)
@@ -134,67 +140,68 @@ time.sleep(1)
 #THE NAMES
 
 user_name = (input("What would you like to be called in this game? XD:" ))
-user_name_is_bad = True 
-while user_name_is_bad == True:
+invalid_choice = True 
+while invalid_choice == True:
     if any(char.isdigit() for char in user_name):
         print("Your name cannot be a number...")
         user_name = (input("What would you like to be called in this game? XD:" ))
-        user_name_is_bad == True
+        invalid_choice == True
 
     elif user_name == "":
         print("You have to type in something...")
-        user_name = (input("What would you like to be called in this game? XD:" ))
-        user_name_is_bad == True
+        user_name = (input("What would you like to be called in this game? XD: " ))
+        invalid_choice == True
 
     else:
         print("Hiya",user_name, "!" )
+        invalid_choice == False
         break
 
 time.sleep(1)
 
 freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
-freddy_name_is_bad = True
+invalid_choice = True
 
-while freddy_name_is_bad == True:
+while invalid_choice == True:
     if any(char.isdigit() for char in freddy_name):
         print("Their name cannot be have a number...")
         freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
-        freddy_name_is_bad == True
+        invalid_choice == True
 
     elif freddy_name == "":
         print("You hafta type in something...")
         freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
-        freddy_name_is_bad == True
+        invalid_choice == True
 
     else:
         print(f"Great! Your friend will be called {freddy_name}.")
+        invalid_choice = False
         break
 
 time.sleep(1)
 
 #CHECKS IF THEY HAVE PLAYED
-player_is_correct1 = False
-    
-while not player_is_correct1:
+invalid_choice = True
 
-    have_you_played1 = int(input("Have you played this game before? (yes/no): "))
+while invalid_choice == True:
+
+    have_you_played = int(input("Have you played this game before? Select 1 for yes, 2 for no: "))
     match have_you_played:
           case 1:
             print("Okay, I’ll let you get to it.")
             time.sleep(2)
             print("Choose wisely as your choices affect your game from now on!!!")
-            player_is_correct1 = True
 
             time.sleep(2)
 
             title_line = open("title_line.txt", "r")
             print(title_line.read())
             title_line.close()
+            invalid_choice = False
             break
 
           case 2:
-            print("Coolio! Lemme help you get started! XD\n" "Press enter to continue...")
-            player_is_correct1 = True
+            print("Coolio! Lemme help you get started! XD\n")
 
             player_action1 = [f"Press 1 to check on your friend {freddy_name}", 
                     "Press 1 to go downstairs", 
@@ -210,11 +217,11 @@ while not player_is_correct1:
                     "Maybe you can find it in yourself to invite others into your fortified compound.", 
                     "Maybe...\n"] 
 
-            TypeText("Allow me to explain what's going on here...")
-            time.sleep(2)
-            TypeText("It's been 9 months since the water stopped flowing through the taps")
-            time.sleep(2)
-            TypeText("10 since the wifi went down")
+            TypeText("Allow me to explain what's going on here...\n")
+            time.sleep(1)
+            TypeText("It's been 9 months since the water stopped flowing through the taps.\n")
+            time.sleep(1)
+            TypeText("10 since the wifi went down.\n")
 
             def tutorial_part2(player_action_index):
                 TypeText(player_action1[player_action_index])
@@ -226,27 +233,23 @@ while not player_is_correct1:
 
             for x in range(5):
                 tutorial_part2(x)
-            break
+
+                invalid_choice = False
+                break
 
           case _:
             print("1 or 2 bro XD")
-            player_is_correct1 = False
+            invalid_choice = True
 
-integrity =int(3)
-health = int(3)
-trust = int(3)
-supplies = int(3)
-
-print("Let's take a look at your stats")
-
+print("\nLet's take a look at your stats")
 time.sleep(1)
-
 stat_checker(integrity, health, trust, supplies)
 
 print("Knock, knock…\n" "Wait, what?")
 time.sleep(1)
-print("KNOCK, KNOCK, KNOCK…\n" "What was THAT?"
-TypeText("It was coming from the front door.")
+TypeText("KNOCK, KNOCK, KNOCK…\n" "What was THAT?")
+time.sleep(1)
+TypeText("It was coming from the front door.\n")
 
 invalid_choice = True
 
@@ -258,13 +261,12 @@ while invalid_choice == True:
         case 1:
             TypeText("There’s…\n" "There’s a person there…")
             time.sleep (1)
-            TypeText(f"You haven’t seen another person other than {freddy_name} in years. You almost start shaking, you’re so surprised.")
-            player_input = int(input("Do you wanna answer the door? yes = 1, no = 2 "))
+            TypeText(f"\nYou haven’t seen another person other than {freddy_name} in years. You almost start shaking, you’re so surprised.\n")
+            player_input = int(input("Do you wanna answer the door? Press 1 to answer; Press 2 to ignore."))
             match player_input:
                 case 1:
+                    TypeText("You slowly step back from the window you were observing the stranger from.\n")
                     doctor_event()
-                    time.sleep(1)
-                    TypeText("You slowly step back from the window you were observing the stranger from.")
                     break
                 case 2:
                     TypeText("You decide to ignore the noise and continue with your day.")
@@ -276,13 +278,13 @@ while invalid_choice == True:
         case 2:
             TypeText("You continue making plans for the day but your friend has a mind of their own.\n" "When did they get out of bed? Goodness knows...")
             time.sleep(1)
-            TypeText("All you’re aware of is the fact that they opened the door to check whatever is making the ruckus outside...")
+            TypeText("\n All you’re aware of is the fact that they opened the door to check whatever is making the ruckus outside...")
             time.sleep(1)
             TypeText("WAIT, NO! STOP!\n" "WE DON’T KNOW WHAT’S OUT THERE! NOOOOO!")
             time.sleep(1)
-            TypeText(f"You fling yourself towards the door to stop {freddy_name}, but they've already undid the door lock...\n" "Stepped outside...\n" "And gasped at whatever they saw.")
+            TypeText(f"\nYou fling yourself towards the door to stop {freddy_name}, but they've already undid the door lock...\n" "Stepped outside...\n" "And gasped at whatever they saw.")
             time.sleep(1)
-            TypeText("You shove yourself between them and the visitor to drag them inside and chide them for being so reckless.\n" f"But you have a visitor...")
+            TypeText("\nYou shove yourself between them and the visitor to drag them inside and chide them for being so reckless.\n" f"But you have a visitor...")
             doctor_event()
             invalid_choice = False
             break
@@ -291,5 +293,11 @@ while invalid_choice == True:
             print("Invalid input bruh")
             player_input = int(input("Press 1 to check what on earth caused noise; Press 2 to ignore it, you’ve got stuff to do "))
             invalid_choice = True
+
+TypeText("The back garden seemed unusually appealing today, so you head over even though the air feels sub-zero.\nThe chilling air soothes you just for a second, your muscles relax for the first time this day.")
+time.sleep(1)
+TypeText("\nThe potato plants are wilting a little, though, and so are the courgettes. When was the last time you watered them?")
+
+time.sleep(1)
 
 #MANEGEMET/TERRIBLE VISITOR/ORWHATEver
