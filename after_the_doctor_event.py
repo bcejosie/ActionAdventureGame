@@ -1,22 +1,3 @@
-import time
-import sys
-
-freddy_name = "Freddy"
-trust = 2
-supplies = 1
-
-def TypeText(textToType):
-      for chars in textToType:
-            sys.stdout.write(chars)
-            sys.stdout.flush()
-            time.sleep(.03)
-
-TypeText("The back garden seemed unusually appealing today, so you head over even though the air feels sub-zero.\nThe chilling air soothes you just for a second, your muscles relax for the first time this day.")
-time.sleep(1)
-TypeText("\nThe potato plants are wilting a little, though, and so are the courgettes. When was the last time you watered them?")
-
-time.sleep(1)
-
 invalid_input = True
 
 if trust == 4 and trust != 3 and trust != 2 and trust != 1:
