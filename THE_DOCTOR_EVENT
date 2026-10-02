@@ -1,0 +1,53 @@
+def doctor_event(trust, freddy_name):
+    the_doctor = open("the_doctor.txt", "r")
+    print(the_doctor.read())
+    the_doctor.close()
+
+    TypeText("The person at the door… looks strange\n" "Well, it’s probably because you haven’t seen another person in over a year.")
+    time.sleep(2)
+    TypeText("\nEven so, she seems unusually polished, like she’s on her way to work rather than a survivor of a worldwide apocalypse.\n" "There’s a word pinned to her blazer, one that you haven’t seen in a long time: DR.")
+    time.sleep(2)
+    TypeText("\n'Hello'\n" "You instinctively take a step back, did she just speak?")
+    time.sleep(2)
+    TypeText("\n'Hello!' She repeats, louder and with more confidence.\n'My name is Juniper and I’m - or, was a doctor. That was all, ofcourse, be-before the whole world collapsed in on herself...'\n")
+
+    player_input = int(input("1. Slam the door in her face    2. Ask where she is from    3.Remain speechless "))
+    invalid_choice = True
+
+    while invalid_choice == True:
+
+      match player_input:
+         
+          case 1:
+            trust = trust - 1
+            print("You slam the door in her face.")
+            time.sleep(1)
+            TypeText("Obviously, after all this time, you're too stunned to even explore the possibilities of this situation.\n" "You've been comfortable and safe for over a year by keeping youreslf shut in, why stop now?")
+            time.sleep(1)
+            TypeText("\nYou’ve got work to do. And who knows if Juniper was lying, if that even is her name.\n" "There was something off about her, you're sure of it.")
+            time.sleep(1)
+            TypeText(f"\n{freddy_name} glares at you from the top of the stairs.\n" "I don't think they're too happy at you turing down a peaceful looking visitor.")
+            time.sleep(1)
+            print("\n-1 Trust")
+            print (f"Trust = {trust}")
+            invalid_choice = False
+            break
+
+          case 2:
+            TypeText(">'Where are you from?' You hear yourself asking." "\nJuniper's faint smile grows even wider and you sense a little spark light up in her eyes.")
+            invalid_choice = False
+            break
+
+          case 3:
+            TypeText("The doctor contiues to talk and talk.\n What about? You stopped paying attention a while ago, don't ask me.\n" "As she goes on and on, you notice the two suitcases behind her.")
+            time.sleep(2)
+            TypeText("Even though she obviously took care of her appearance before getting to your door, she still seems worn out and tierd.\n Her well trimmed hands were had specks of dirt and green all over them.")
+            invalid_choice = False
+            break
+         
+          case _:
+            print("Invalid input. Please enter 1, 2 or 3.")
+            player_input = int(input("1. Slam the door in her face    2. Ask where she is from    3.Remain speechless "))
+            invalid_choice = True
+
+doctor_event(trust, freddy_name)
