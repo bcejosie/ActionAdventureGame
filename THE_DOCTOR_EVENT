@@ -1,3 +1,15 @@
+import time
+import sys
+
+freddy_name = "Freddy"
+trust = 3
+
+def TypeText(textToType):
+      for chars in textToType:
+            sys.stdout.write(chars)
+            sys.stdout.flush()
+            time.sleep(.03)
+
 def doctor_event(trust, freddy_name):
     the_doctor = open("the_doctor.txt", "r")
     print(the_doctor.read())
