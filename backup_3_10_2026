@@ -1,0 +1,477 @@
+import time
+import sys
+
+def TypeText(textToType):
+      for chars in textToType:
+            sys.stdout.write(chars)
+            sys.stdout.flush()
+            time.sleep(.03)
+
+def doctor_event(trust, supplies, freddy_name):
+    the_doctor = open("the_doctor.txt", "r")
+    print(the_doctor.read())
+    the_doctor.close()
+
+    TypeText("The person at the door… looks strange\n" "Well, it’s probably because you haven’t seen another person in over a year.")
+    time.sleep(2)
+    TypeText("\nEven so, she seems unusually polished, like she’s on her way to work rather than a survivor of a worldwide apocalypse.\n" "There’s a word pinned to her blazer, one that you haven’t seen in a long time: DR.")
+    time.sleep(2)
+    TypeText("\n'Hello'\n" "You instinctively take a step back, did she just speak?")
+    time.sleep(2)
+    TypeText("\n'Hello!' She repeats, louder and with more confidence.\n'My name is Juniper and I’m - or, was a doctor. That was all, ofcourse, be-before the whole world collapsed in on herself...'\n")
+    time.sleep(2)
+    TypeText("The doctor contiues to talk and talk.\n What about? You stopped paying attention a while ago, don't ask me.\n" "As she goes on and on, you notice the two suitcases behind her.")
+    time.sleep(2)
+    TypeText("Even though she obviously took care of her appearance before getting to your door, she still seems worn out and tierd.\n Her well trimmed hands were had specks of dirt and green all over them.")
+
+    player_input = int(input("1. Slam the door in her face    2. Ask where she is from"))
+    invalid_choice = True
+
+    while invalid_choice == True:
+
+      match player_input:
+         
+          case 1:
+            trust = trust - 1
+            print("You slam the door in her face.")
+            time.sleep(1)
+            TypeText("Obviously, after all this time, you're too stunned to even explore the possibilities of this situation.\n" "You've been comfortable and safe for over a year by keeping youreslf shut in, why stop now?")
+            time.sleep(1)
+            TypeText("\nYou’ve got work to do. And who knows if Juniper was lying, if that even is her name.\n" "There was something off about her, you're sure of it.")
+            time.sleep(1)
+            TypeText(f"\n{freddy_name} glares at you from the top of the stairs.\n" "I don't think they're too happy at you turing down a peaceful looking visitor.")
+            time.sleep(1)
+            print("\n-1 Trust")
+            Trust = trust - 1
+            print (f"Trust = {trust}")
+            invalid_choice = False
+            break
+
+          case 2:
+            TypeText(">'Where are you from?' You hear yourself asking." "\nJuniper's faint smile grows even wider and you sense a little spark light up in her eyes.")
+            time.sleep(2)
+            TypeText("\n'Well, yes ofcourse, I'd have to tell you that! Isn't it a bit strange that I come fro absolutley nowhere?!'" "\n Juniper laughs dryly and you sense your patience running thinner by the second.")
+            time.sleep(2)
+            TypeText("\n'I was living in my little flat since 3 days ago as strange as it seems... and then bam!" "\nBandits! Came out of nowhere and forced me out of whatever little life I was trying to build.'")
+            time.sleep(2)
+            TypeText("\n'Okay, I'll cut to the chase, I need help and somewhere to stay.\n" "You're the only sane I've seen for miles in this forsaken world and it takes a lot from me to, well, ask for help from a stranger.'")
+            time.sleep(2)
+            TypeText("\nIf you had heard this 2 months ago, you may have let her in.\n" "That was before the first of 3 raids, where bandits stormed your compound and stole almost all of your supplies.\n")
+            time.sleep(2)
+            TypeText("\nMaybe you should ask her another question before you trust her completely.")
+            time.sleep(2)
+            print("\n1. Ask her more about her life in her flat     2. As her about the bandits")
+            invalid_choice = False
+            break
+
+          case _:
+            print("Invalid input. Please enter 1 or 2.")
+            player_input = int(input("1. Slam the door in her face    2. Ask where she is from"))
+            invalid_choice = True
+
+title_card = """
+    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄▄    ·  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ ▄▀▀             ░ ▄              ▀▄   ▄▀            ▀▄   ▄▀         ░ ░▒▓░
+▐▌     ▄▄▄▄     ▒▒ █               ▐▌ ▐▌              ▐▌ ▐▌             ░▒▒
+█      ░  ░     ░▓ ▓      ▒▀▀░     ░█ ▓               ░█ ▓               ░▓
+▒      ▒  ▀▀▀▀▀▀▀▀ ▒      ░  ▒      █ ▒      █▀▀▄      █ ▒      ▄▄▄▄▄▄▄▄▄▄█
+▐▌      ▀▄▄▄▄▄▄    ░      █  █▄     █ ░      █▄▄▒    ┼┼█ ░ ┼    ▒▄▄▄▄▄▄▄   
+ ▀▄▄         ┼┼▀▄  █┼┼    █   ░    ┼░ █┼            ┼┼┼█ █┼┼┼       ┼┼┼▒ · 
+    ▀▀▀▀▀▄▄┼├├┼├├▌ █┼┼┼┼ ┼█   ▒  ┼┼┼▒ █┼┼   ┼█▀▀█┼   ┼┼█ █┼┼   ┼┼┼┼┼┼┼┼▒   
+▀▀▀▀▀▀▀░  ▒┼├├┼├├▓ █┼┼┼┼┼┼█   ▓┼┼┼┼┼▓ █┼┼┼┼┼┼░  █┼┼┼ ┼┼░ █┼┼┼ ┼┼░▀▀▀▀▀▀▀ · 
+▒┼┼├┼┼┼▒▄▄▓┼┼├┼┼▐▌ █┼┼┼┼┼┼█▄▄▄▀┼┼┼┼▐▌ █┼┼┼┼┼┼▒  █┼┼┼┼┼┼▒ █┼┼┼┼┼┼▒   ░▒▓▒░  
+░┼├┼┼┼┼┼┼┼┼┼┼┼┼▄▀  █┼┼┼┼┼┼┼┼┼┼┼┼┼┼▄▀  █┼┼┼┼┼┼▓  █┼┼┼┼┼┼▓ █┼┼┼┼┼┼▓  ░▒▓█▓▒░ 
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀    ▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀  ·░▒▓▒░  
+"""
+
+#FUNTIONS
+#THE STATS SYSYEM
+def stat_checker(integrity, health, trust, supplies):
+
+    #integrity
+    if integrity== 1:
+            TypeText("Integrity = 1\n" "The intergrity of your compound is VERY low, please find a way to increase it...")
+    elif integrity== 2:
+            TypeText("Integrity = 2\n" "The intergrity of your compound is low, you don't want it decrease any further.")
+    elif integrity== 3:
+            TypeText("Integrity = 3\n" "The intergrity of your compound is okay, you'll be fine for a hot minute.")
+    elif integrity== 4: 
+            TypeText("Integrity = 2\n" "The intergrity of your compound is pretty high, good job!")
+    elif integrity== 5:
+            TypeText("Integrity = 5\n" "The intergrity of your compound is really high! You'd be able to defend a massive hoard now!")
+
+    time.sleep(2)
+
+    #Health
+    if health == 1:
+            TypeText("Health = 1\n" "It's a wonder how you're still alive... Your supplies have been decreased due to needing medicine.")
+            supplies = supplies - 1
+            TypeText ("Supplies now =", supplies)
+    elif health == 2:
+            TypeText ("Health = 2\n" "You really don't want your household to get anymore ill, please find a way to get healthier.")
+    elif health == 3:
+            TypeText ("Health = 3\n" "You're health is okay. You're not feeling too good or too bad at all.")
+    elif health == 4:
+            TypeText ("Health = 4\n" "You're health is pretty good! You could surive an influenza or 2.")
+    elif health == 5:
+            TypeText("Health = 5\n" "You're health is really good! You could run a 100m in 7s while you're this healthy!")
+
+    time.sleep(2)
+
+    #Trust
+    if trust == 1:
+            TypeText("Trust = 1\n" "Woah, how did you become so untrustworthy... You've noticed that supplies have been decreasing more than usual, a thief?")
+            supplies = supplies -1
+    elif trust == 2:
+            TypeText("Trust = 2\n" "Your houshold has little faith in you and your leadership. Find a way to settle their worries.")
+    elif trust == 3:
+            TypeText("Trust = 3\n" "Your household has trust in you and you have trust in them.")
+    elif trust == 4:
+            TypeText("Trust = 4\n" "Your household has quite a bit of trust in you. Good job, try to keep it that way!")
+    elif trust == 5:
+            TypeText("Trust = 5\n" "Woah, your leadership skills are amazing! The people around you would jump of a cliff for you!")
+
+    time.sleep(2)
+
+    #Supplies
+    if supplies == 1:
+            TypeText ("Supplies = 1\n" "Your household is starving... Your health has decreased.")
+            health = health - 1
+            TypeText ("Health now =", health)
+    elif supplies == 2:
+            TypeText ("Supplies = 2\n" "Your supplies are pretty low. If it gets any lower your family could starve..")
+    elif supplies == 3:
+            TypeText ("Supplies = 3\n" "Your supplies are okay, try to increase them soon.")
+    elif supplies == 4:
+            TypeText("Supplies = 4\n" "Your supplies are pretty good, let's keep it that way!")
+    elif supplies == 5: 
+            TypeText ("Supplies = 5\n" "Woah, your supply level is REALLY good. Seriously, you've got so much there isn't anymore space to store stuff in the house...")
+
+print(title_card)
+
+#First messages
+
+print ("You play this game by typing your response into the terminal.")
+time.sleep(2)
+print ("Press the enter key to continue.")
+time.sleep(1)
+print ("Type 'skip' then enter to skip the intro...")
+
+#THE MAIN INTRO - The narrative messages
+narrative1 = [
+    "The mid-morning sun pierces through the thin curtains fluttering around your bedroom window.\n"
+    "You sit up sharply and wipe the tiredness out of your eyes.                                           Press enter to continue...",
+    "Just like any other day, there’s no time to lie in.\n"
+    "Almost out of instinct, your hand grabs for the pen that is always placed atop your bedside table.    Press enter to continue...",
+    "You use this pen to cross the previous day off the calendar you'd placed above your bed.\n"
+    "I can get through another few days', you say to yourself.\n"
+    "'Three weeks more at Freddy's.'                                                                       Press enter to continue...",
+    "Hi here!\n"
+    "Welcome to my game! Thanks for picking it up!#\n" "This is a text-based game, so you will be reading a lot of text."
+    "But I hope you enjoy it anyway! :)                                                                    Press enter to continue...",
+    "Choose between the numbers 1-3 to select an action#\n"
+    "When prompted, simply select the enter key to continue.                                               Press enter to continue...",
+    "You will also be making choices that will affect the endings that you can get!.\n"
+    "So choose wisely! (Press enter one more time!) :D)"]
+
+for sentence in narrative1:
+    TypeText(sentence)
+    player_input = input()
+    if player_input == "":
+        pass
+    elif player_input == "skip":
+        break
+    else: 
+        print("Invalid input. Please press enter to continue or type 'skip' to skip the intro.")
+        pass
+
+time.sleep(1)
+
+#THE NAMES
+
+user_name = (input("What would you like to be called in this game? XD:" ))
+invalid_choice = True 
+while invalid_choice == True:
+    if any(char.isdigit() for char in user_name):
+        print("Your name cannot be a number...")
+        user_name = (input("What would you like to be called in this game? XD:" ))
+        invalid_choice == True
+
+    elif user_name == "":
+        print("You have to type in something...")
+        user_name = (input("What would you like to be called in this game? XD:" ))
+        invalid_choice == True
+
+    else:
+        print("Hiya",user_name, "!" )
+        invalid_choice == False
+        break
+
+time.sleep(1)
+
+freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
+invalid_choice = True
+
+while invalid_choice == True:
+    if any(char.isdigit() for char in freddy_name):
+        print("Their name cannot be have a number...")
+        freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
+        invalid_choice == True
+
+    elif freddy_name == "":
+        print("You hafta type in something...")
+        freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
+        invalid_choice == True
+
+    else:
+        print(f"Great! Your friend will be called {freddy_name}.")
+        invalid_choice = False
+        break
+
+time.sleep(1)
+
+#CHECKS IF THEY HAVE PLAYED
+invalid_choice = True
+
+while invalid_choice == True:
+
+    have_you_played = int(input("Have you played this game before? Select 1 for yes, 2 for no: "))
+    match have_you_played:
+          case 1:
+            print("Okay, I’ll let you get to it.")
+            time.sleep(2)
+            print("Choose wisely as your choices affect your game from now on!!!")
+
+            time.sleep(2)
+
+            title_line = open("title_line.txt", "r")
+            print(title_line.read())
+            title_line.close()
+            invalid_choice = False
+            break
+
+          case 2:
+            TypeText("Coolio! Lemme help you get started! XD\n" "Press enter to continue...")
+
+            player_action1 = [ f"Select a to check on your friend {freddy_name}", 
+                "Select b to go downstairs",
+            "Select c to outside",
+            "Select d to check on the fences",
+            "Select e to collect rainwater",
+            "Select f to go back inside",
+            "Select g to start making plans"]
+
+            lets_get_started2 = ["There’s been some kind of prodigious apocalypse but you can’t for the life of you figure out what happened to the world outside.\n"
+                     f"At the time that all hell broke loose, you were at the home of your best friend: {freddy_name}.\n",
+                     "\nWhen it became clear that it would be impossible to return home, you both decided to nominate you as leader of the household as you were slightly older and, hopefully, better equipped to manage the situation.\n",
+                     f"\nYou’ve had to barricade yourselves inside the house you've been sharing with your friend , {freddy_name}, to keep away hungry animals and… people who may try to take you supplies.\n", 
+                     f"\nAlthough you’ve been very weary of strangers for the first 9 months of your impossible situation, tensions between you and your friend, {freddy_name},have almost reached their limits.\n",
+                     f"\nYou aren’t sure what will happen if you completely fall out with={freddy_name} but you are sure the results would be disastrous.\n" 
+                     "\nMaybe you can find it in yourself to invite others into your fortified compound.\n",
+                     "\nMaybe...\n"] 
+
+            TypeText("Allow me to explain what's going on here...\n")
+            TypeText("It's been 9 months since the water stopped flowing through the taps.\n")
+            TypeText("10 since the wifi went down.\n")
+
+            time.sleep(1)
+
+            print(player_action1[0])
+            player_input = input(" ").lower()
+            while player_input != "a":
+                player_input = input("unidentifiable input please try again: ").lower()
+            TypeText(lets_get_started2[0])
+            time.sleep(2)
+
+            print(player_action1[1])
+            player_input = input(" ").lower()
+            while player_input != "b":
+                player_input = input("unidentifiable input please try again: ").lower()
+            TypeText(lets_get_started2[1])
+
+            print(player_action1[2])
+            player_input = input(" ").lower()
+            while player_input != "c":
+                player_input = input("unidentifiable input please try again: ").lower()
+            TypeText(lets_get_started2[2])
+
+            print(player_action1[3])
+            player_input = input(" ").lower()
+            while player_input != "d":
+                player_input = input("unidentifiable input please try again: ").lower()
+            TypeText(lets_get_started2[3])
+            time.sleep(1)
+
+            print(player_action1[4])
+            player_input = input(" ").lower()
+            while player_input != "e":
+                player_input = input("unidentifiable input please try again: ").lower()
+                TypeText(lets_get_started2[4])
+            time.sleep(1)
+
+            print(player_action1[5])
+            player_input = input(" ").lower()
+            while player_input != "f":
+                player_input = input("unidentifiable input please try again: ").lower()
+                TypeText(lets_get_started2[5])
+            time.sleep(1)
+
+
+            print(player_action1[6])
+            player_input = input(" ").lower()
+            while player_input != "g":
+                player_input = input("unidentifiable input please try again: ").lower()
+                time.sleep(1)
+
+                invalid_choice = False
+                break
+
+          case _:
+            print("1 or 2 bro XD")
+            invalid_choice = True
+
+integrity =int(3)
+health = int(3)
+trust = int(3)
+supplies = int(3)
+
+print("Let's take a look at your stats")
+
+time.sleep(1)
+
+stat_checker(integrity, health, trust, supplies)
+
+print("Knock, knock…\n" "Wait, what?")
+time.sleep(1)
+print("KNOCK, KNOCK, KNOCK…\n" "What was THAT?")
+TypeText("It was coming from the front door.")
+
+invalid_choice = True
+
+while invalid_choice == True:
+
+    player_input = int(input("Press 1 to check what on earth caused noise was; Press 2 to ignore, you’ve got stuff to do "))
+    
+    match player_input:
+        case 1:
+            TypeText("There’s…\n" "There’s a person there…")
+            time.sleep (1)
+            TypeText(f"You haven’t seen another person other than {freddy_name} in years. You almost start shaking, you’re so surprised.")
+            player_input = int(input("Do you wanna answer the door? yes = 1, no = 2 "))
+            match player_input:
+                case 1:
+                    doctor_event()
+                    time.sleep(1)
+                    TypeText("You slowly step back from the window you were observing the stranger from.")
+                    break
+                case 2:
+                    TypeText("You decide to ignore the noise and continue with your day.")
+                    invalid_choice = False
+                    break
+                case _:
+                    print("Invalid input. Please enter 1 or 2.")
+
+        case 2:
+            TypeText("You continue making plans for the day but your friend has a mind of their own.\n" "When did they get out of bed? Goodness knows...")
+            time.sleep(1)
+            TypeText("All you’re aware of is the fact that they opened the door to check whatever is making the ruckus outside...")
+            time.sleep(1)
+            TypeText("WAIT, NO! STOP!\n" "WE DON’T KNOW WHAT’S OUT THERE! NOOOOO!")
+            time.sleep(1)
+            TypeText(f"You fling yourself towards the door to stop {freddy_name}, but they've already undid the door lock...\n" "Stepped outside...\n" "And gasped at whatever they saw.")
+            time.sleep(1)
+            TypeText("You shove yourself between them and the visitor to drag them inside and chide them for being so reckless.\n" f"But you have a visitor...")
+            doctor_event()
+            invalid_choice = False
+            break
+        
+        case _:
+            print("Invalid input bruh")
+            player_input = int(input("Press 1 to check what on earth caused noise; Press 2 to ignore it, you’ve got stuff to do "))
+            invalid_choice = True
+
+invalid_input = True
+
+if trust == 4 and trust != 3 and trust != 2 and trust != 1:
+    TypeText("\nThe doctor could help out maybe; put them to work and have them show their worth?")
+    time.sleep(1)
+    player_input = int(input("\nSelect 1 to water crops with Juniper, 2 to speak with Freddy"))
+
+    while invalid_input == True:
+        match player_input:
+            case 1:
+                TypeText("You go to water the crops.")
+                invalid_input = False
+                break
+
+            case 2:
+                TypeText(f"You go to speak with {freddy_name}.")
+                invalid_input = False
+                break
+    
+            case _:
+                print("Invalid input. Please enter 1 or 2.")
+                player_input = int(input("Select 1 to water crops with Juniper, 2 to speak with Freddy"))
+                invalid_input = True
+                break
+
+elif trust == 3 and trust !=2 and trust != 4 and trust != 1:
+    TypeText("\nBut you also have to check on the fences, you don’t want another determined visitor to scale them now do you?\n")
+    time.sleep(1)
+    player_input = int(input("\nSelect 1 to water crops, 2 check on fences"))
+
+    while invalid_input == True:
+
+        match player_input:
+            case 1:
+                TypeText("You go to water the crops.")
+                invalid_input = False
+                break
+
+            case 2:
+                TypeText("You go to check on the fences.")
+                invalid_input = False
+                break
+
+            case _:
+                print("Invalid input. Please enter 1 or 2.")
+                player_input = int(input("Select 1 to water crops, 2 check on fences"))
+                invalid_input = True
+                break
+
+elif trust == 2 and trust != 3 and trust != 4 and trust != 1:
+    TypeText(f"\nBut maybe you should talk to {freddy_name} about what happened today. You don’t want them to stay upset with you.\n")
+    time.sleep(1)
+    player_input = int(input(f"Select 1 to water crops, 2 to speak with {freddy_name}"))
+    
+    while invalid_input == True:
+
+        match player_input:
+            case 1:
+                TypeText("You call  out of the house to help you out.\nThey don’t respond so you call yet again.")
+                time.sleep(1)
+                TypeText("\nThis time they come out to join you in the garden.\n You water the crops side by side in silence in silence.\n +1 supplies")
+                supplies = supplies + 1
+                print(f"Supplies now = {supplies}")
+                invalid_input = False
+                break
+
+            case 2:
+                TypeText(f"\n You call {freddy_name} out of the house." "\nIt's a good idea to talk over what happened today and how you've acted." f"\nYou’re able to explain your reasoning to {freddy_name}.")
+                time.sleep(2)
+                TypeText(f"\nIt’s not as if Juniper was an obvious threat, but neither of you knew her." "\nThe outside world has all gone crazy so it’s not as if you can trust just anyone.")
+                time.sleep(2)
+                TypeText(f"\nThankfully, {freddy_name} get’s it." "\nThey were just upset that they could’ve missed out on a unique opportunity.\n And they trust in you grows a little. +1 Trust.")
+                time.sleep(2)
+                trust = trust + 1
+                print(f"\nTrust now = {trust}")
+                invalid_input = False
+                break
+
+            case _:
+                print("Invalid input. Please enter 1 or 2.")
+                player_input = int(input("Select 1 to water crops, 2 to speak with Freddy"))
+                invalid_input =True
+                break
+
+#MANEGEMET/TERRIBLE VISITOR/ORWHATEver
