@@ -479,4 +479,6 @@ elif trust == 2 and trust != 3 and trust != 4 and trust != 1:
                 invalid_input =True
                 break
 
+
+
 #MANEGEMET/TERRIBLE VISITOR/ORWHATEver
