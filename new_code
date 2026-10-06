@@ -1,0 +1,33 @@
+import time
+import sys
+import random
+
+integrity =int(1)
+health = int(1)
+trust = int(2)
+supplies = int(3)
+
+def TypeText(textToType):
+      for chars in textToType:
+            sys.stdout.write(chars)
+            sys.stdout.flush()
+            time.sleep(.03)
+
+random_number = random.randint(1,2)
+
+if random_number == 1:
+      # Management Situation
+      TypeText("Now that the day has ended, take the opportunity to managment your household.\n" "Today, you have a choice between increase either your integrity stat or your health stat.")
+      if integrity > health: 
+            TypeText(f"The integrity of your compound = {integrity} and needs to be increased the most.")
+            TypeText(f"\nHealth equals {health}")
+            time.sleep(1)
+            TypeText("You've noticed some animal holes have formed around the fences at the front of the house.\n" "You could spend your evening patching up the holes with Fredrick to ensure the fences are as secure as possible.")
+            time.sleep(2)
+            TypeText("\nOr you can organize your remaining food and draft a new diet so that your household is eating healthily.")
+            ("Do you want to spend your evening ")
+            player_input = int(input("Do you want to "))
+
+
+elif random_number == 2: 
+      print("Your number was two.")
