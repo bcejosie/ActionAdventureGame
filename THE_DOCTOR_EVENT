@@ -1,4 +1,4 @@
-def doctor_event(trust, supplies, freddy_name):
+def doctor_event(trust, freddy_name, doctor, visitors):
     the_doctor = open("the_doctor.txt", "r")
     print(the_doctor.read())
     the_doctor.close()
@@ -33,7 +33,7 @@ def doctor_event(trust, supplies, freddy_name):
             TypeText(f"\n{freddy_name} glares at you from the top of the stairs.\n" "I don't think they're too happy at you turing down a peaceful looking visitor.")
             time.sleep(1)
             print("\n-1 Trust")
-            Trust = trust - 1
+            trust = trust - 1
             print (f"Trust = {trust}")
             invalid_choice = False
             break
@@ -51,7 +51,61 @@ def doctor_event(trust, supplies, freddy_name):
             time.sleep(2)
             TypeText("\nMaybe you should ask her another question before you trust her completely.")
             time.sleep(2)
-            print("\n1. Ask her more about her life in her flat     2. As her about the bandits")
+            player_input = int(input("\n1. Ask her more about her life in her flat (learn more of the apocalypse)    2. Ask her more about the bandits (could they be a threat to you?)"))
+            invalid_choice = True
+
+            while invalid_choice == True:
+              match player_input:
+                case 1:
+                  print("\nYou've chosen to learn more about the apocalypse.")
+                  time.sleep(1)
+                  TypeText("\n> You had a flat? Where was it?\n" "Juniper's eyes light up even more. 'Yes, it was a small place at the edge of the city, I guess you could say I lived in the suburbs.' ")
+                  time.sleep(2)
+                  TypeText("\n'It was about... let's see... last December I think when I moved to the larger block across the street.'\n" "'That was when my fla reached sub zero temperatures and I was forced to find somewhere that was better insulated.'")
+                  time.sleep(2)
+                  TypeText("\nA tear rolls down Juniper's face. 'I don't know what happened to everyone. One day I'm driving the clnic, the next the road is completely blocked with abandoned cars...'")
+                  time.sleep(2)
+                  TypeText("\n'Do you know what happened to us, to our world.' Juniper wipes her eyes and looks to you, for an answer.\n" "'> No, I don't know what happened... I'm still trying to find that out too.'")
+                  time.sleep(2)
+                  TypeText("\nYou both stand in silence for a second, considering the weight of what's happened to both of your lives.\n Juniper is right. The world just paused out of nowhere and the next thing you see on the streets is complete anarchy.")
+                  time.sleep(2)
+                  player_input = int(input("\nJuniper needs a place to stay... can you give her a room? Select 1 for yes, 2 for no. "))
+                  invalid_choice = True
+
+                  while invalid_choice == True:
+                    match player_input:
+                      case 1:
+                        print("\nYou've decided to accept this visitor.")
+                        time.sleep(2)
+                        TypeText("\n'You can stay, if you'd like, at our place. The house is pretty big and, well, its been kinda empty so-'" "\n'Yes, YES! OF COURSE I CAN STAY. I'll help you if you ever get sick, you'd be in very good hands!'")
+                        time.sleep(2)
+                        TypeText("Juniper grabs the suitcases that was left previously ignored behind her and storms into the house.\n" f"{freddy_name} appears behind you and helps the new resident with her luggage.\n")
+                        time.sleep(2)
+                        TypeText("What have you done...\n")
+                        doctor = doctor + 1 
+                        visitors = visitors + 1 
+                      case 2:
+                        print("stuff appenes")
+
+                      case _:
+                        print("nothing")
+
+                      
+
+                  invalid_choice == True
+                  break
+
+                case 2:
+                  print("Invalid input. Please select 1 or 2.")
+                  player_input = int(input(" "))
+                  invalid_choice = False
+                  break
+
+                case _:
+                  print("Invalid input. Please select 1 or 2.")
+                  player_input = int(input(" "))
+                  invalid_choice == True    
+
             invalid_choice = False
             break
 
