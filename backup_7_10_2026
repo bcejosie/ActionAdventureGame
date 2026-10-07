@@ -439,11 +439,6 @@ def doctor_event(trust, freddy_name):
             player_input = int(input("1. Slam the door in her face    2. Ask where she is from"))
             invalid_choice = True
 
-print(f"doctor = {doctor}")
-print(f"visitors = {visitors}")
-print(f"trust = {trust}")
-
-doctor_event(trust, freddy_name)
 # THE DOCTOR EVENT END
 
 title_line = open("title_line.txt", "r")
@@ -498,6 +493,8 @@ while invalid_choice == True:
             print("Invalid input bruh")
             player_input = int(input("Press 1 to check what on earth caused noise; Press 2 to ignore it, you’ve got stuff to do "))
             invalid_choice = True
+
+#After_doctor_event
 
 invalid_input = True
 
