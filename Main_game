@@ -133,50 +133,50 @@ time.sleep(1)
 #THE NAMES
 
 user_name = (input("What would you like to be called in this game? XD:" ))
-invalid_choice = True 
-while invalid_choice == True:
+invalid_input = True 
+while invalid_input == True:
     if any(char.isdigit() for char in user_name):
         print("Your name cannot be a number...")
         user_name = (input("What would you like to be called in this game? XD:" ))
-        invalid_choice == True
+        invalid_input == True
 
     elif user_name == "":
         print("You have to type in something...")
         user_name = (input("What would you like to be called in this game? XD:" ))
-        invalid_choice == True
+        invalid_input == True
 
     else:
         print("Hiya",user_name, "!" )
-        invalid_choice == False
+        invalid_input == False
         break
 
 time.sleep(1)
 
 freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
-invalid_choice = True
+invalid_input = True
 
-while invalid_choice == True:
+while invalid_input == True:
     if any(char.isdigit() for char in freddy_name):
         print("Their name cannot be have a number...")
         freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
-        invalid_choice == True
+        invalid_input == True
 
     elif freddy_name == "":
         print("You hafta type in something...")
         freddy_name = (input("What do you wanna call your friend Fredrick? :) "))
-        invalid_choice == True
+        invalid_input == True
 
     else:
         print(f"Great! Your friend will be called {freddy_name}.")
-        invalid_choice = False
+        invalid_input = False
         break
 
 time.sleep(1)
 
 #CHECKS IF THEY HAVE PLAYED
-invalid_choice = True
+invalid_input = True
 
-while invalid_choice == True:
+while invalid_input == True:
 
     have_you_played = int(input("Have you played this game before? (1/2): "))
     match have_you_played:
@@ -190,7 +190,7 @@ while invalid_choice == True:
             title_line = open("title_line.txt", "r")
             print(title_line.read())
             title_line.close()
-            invalid_choice = False
+            invalid_input = False
             break
 
           case 2:
@@ -227,12 +227,12 @@ while invalid_choice == True:
             for x in range(5):
                 tutorial_part2(x)
 
-                invalid_choice = False
+                invalid_input = False
                 break
 
           case _:
             print("1 or 2 bro XD")
-            invalid_choice = True
+            invalid_input = True
 
 integrity =int(3)
 health = int(3)
@@ -250,9 +250,9 @@ time.sleep(1)
 print("KNOCK, KNOCK, KNOCK…\n" "What was THAT?")
 TypeText("It was coming from the front door.\n")
 
-invalid_choice = True
+invalid_input = True
 
-while invalid_choice == True:
+while invalid_input == True:
 
     player_input = int(input("Press 1 to check what on earth caused noise was; Press 2 to ignore, you’ve got stuff to do "))
     
@@ -269,7 +269,7 @@ while invalid_choice == True:
                     break
                 case 2:
                     TypeText("You decide to ignore the noise and continue with your day.")
-                    invalid_choice = False
+                    invalid_input = False
                     break
                 case _:
                     print("Invalid input. Please enter 1 or 2.")
@@ -285,12 +285,12 @@ while invalid_choice == True:
             time.sleep(1)
             TypeText("\nYou shove yourself between them and the visitor to drag them inside and chide them for being so reckless.\n" f"But you have a visitor...")
             doctor_event()
-            invalid_choice = False
+            invalid_input = False
             break
         
         case _:
             print("Invalid input bruh")
             player_input = int(input("Press 1 to check what on earth caused noise; Press 2 to ignore it, you’ve got stuff to do "))
-            invalid_choice = True
+            invalid_input = True
 
 #MANEGEMET/TERRIBLE VISITOR/ORWHATEver
