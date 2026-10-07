@@ -1,14 +1,30 @@
+TypeText("The back garden seemed unusually appealing today, so you head over even though the air feels sub-zero.\n The chilling air soothes you just for a second, your muscles relax for the first time this day.")
+time.sleep(2)
+TypeText("The potato plants are wilting a little, though, and so are the courgettes. When was the last time you watered them?")
+time.sleep(2)
 invalid_input = True
 
-if trust == 4 and trust != 3 and trust != 2 and trust != 1:
+if trust == 4:
     TypeText("\nThe doctor could help out maybe; put them to work and have them show their worth?")
     time.sleep(1)
-    player_input = int(input("\nSelect 1 to water crops with Juniper, 2 to speak with Freddy"))
+    player_input = int(input(f"\nSelect 1 to water crops with Juniper, 2 to to water crops with {freddy_name}. \n"))
 
     while invalid_input == True:
         match player_input:
             case 1:
-                TypeText("You go to water the crops.")
+                TypeText("You go back inside the house to find Juniper. You spot her in the kitchen mixing up some kind of concoction.\n Multiple tin cans are spread out - opened and empty - around her.")
+                time.sleep(1)
+                TypeText("'Hey, there!' She goes over to you with a cup of whatever she was working on and hands it to you.\n 'This is packed with all the nutrients we'll need to survive these end-times, I don't believe you were getting enough before.'")
+                time.sleep(1)
+                TypeText("You open you mouth to say something but Juniper cuts you off. 'These little changes may use more supplies than usual but have no fear.'\n 'It's well worth it in the long run!' Juniper ends with a smile.")
+                time.sleep(1)
+                TypeText("Sighing, you take a slip. It's surprisingly pleasant but unusually thick.\n You ask her to join you outside and she reluctantly agrees.\n +1 supplies")
+                time.sleep(1)
+                TypeText("You're household's health has increased due to a healthier diet.\n +2 health")
+                health = health + 2
+                TypeText("The new diet is using your supplies faster... -1 supplies")
+                supplies = supplies - 1
+                print(f"Supplies now = {supplies}")
                 invalid_input = False
                 break
 
@@ -23,31 +39,7 @@ if trust == 4 and trust != 3 and trust != 2 and trust != 1:
                 invalid_input = True
                 break
 
-elif trust == 3 and trust !=2 and trust != 4 and trust != 1:
-    TypeText("\nBut you also have to check on the fences, you don’t want another determined visitor to scale them now do you?\n")
-    time.sleep(1)
-    player_input = int(input("\nSelect 1 to water crops, 2 check on fences"))
-
-    while invalid_input == True:
-
-        match player_input:
-            case 1:
-                TypeText("You go to water the crops.")
-                invalid_input = False
-                break
-
-            case 2:
-                TypeText("You go to check on the fences.")
-                invalid_input = False
-                break
-
-            case _:
-                print("Invalid input. Please enter 1 or 2.")
-                player_input = int(input("Select 1 to water crops, 2 check on fences"))
-                invalid_input = True
-                break
-
-elif trust == 2 and trust != 3 and trust != 4 and trust != 1:
+elif trust == 2:
     TypeText(f"\nBut maybe you should talk to {freddy_name} about what happened today. You don’t want them to stay upset with you.\n")
     time.sleep(1)
     player_input = int(input(f"Select 1 to water crops, 2 to speak with {freddy_name}"))
