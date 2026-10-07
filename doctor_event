@@ -1,9 +1,3 @@
-def TypeText(textToType):
-      for chars in textToType:
-            sys.stdout.write(chars)
-            sys.stdout.flush()
-            time.sleep(.03)
-
 def choice_doctor(invalid_choice, freddy_name, doctor, visitors):
   player_input = int(input("\nJuniper needs a place to stay... could you give her a room? Select 1 for yes, 2 for no. "))
 
