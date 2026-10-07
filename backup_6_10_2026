@@ -1,5 +1,6 @@
 import time
 import sys
+import random
 
 integrity =int(3)
 health = int(3)
