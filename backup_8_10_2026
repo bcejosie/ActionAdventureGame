@@ -2,12 +2,17 @@ import time
 import sys
 import random
 
+# FUNTIONS AND VARIBLES FOR LATER USE 
+
+#STATS
 integrity =int(3)
 health = int(3)
 trust = int(3)
 supplies = int(3)
 
-# FUNTIONS FOR LATER USE
+#VISITORS
+visitors = 0
+doctor = 0
 
 #TYPE TEXT
 
@@ -16,18 +21,6 @@ def TypeText(textToType):
             sys.stdout.write(chars)
             sys.stdout.flush()
             time.sleep(.03)
-
-#TITLE CARD
-
-def title_card(): 
-   print("""
-___ _                     _                               ___ 
-|  _(_)                   | |                             |_  |
-| |  _ _ __  ___  ___ _ __| |_   _ __   __ _ _ __ ___   ___ | |
-| | | | '_ \/ __|/ _ \ '__| __| | '_ \ / _` | '_ ` _ \ / _ \| |
-| | | | | | \__ \  __/ |  | |_  | | | | (_| | | | | | |  __/| |
-| |_|_|_| |_|___/\___|_|   \__| |_| |_|\__,_|_| |_| |_|\___|| |
-|___|                                                     |___|""")
 
 #THE STATS SYSYEM
 def stat_checker(integrity, health, trust, supplies):
@@ -91,15 +84,27 @@ def stat_checker(integrity, health, trust, supplies):
     elif supplies == 5: 
             TypeText ("\nSupplies = 5\n" "Woah, your supply level is REALLY good. Seriously, you've got so much there isn't anymore space to store stuff in the house...")
 
+#TITLE CARD
+
+def title_card(): 
+   print("""
+___ _                     _                               ___ 
+|  _(_)                   | |                             |_  |
+| |  _ _ __  ___  ___ _ __| |_   _ __   __ _ _ __ ___   ___ | |
+| | | | '_ \/ __|/ _ \ '__| __| | '_ \ / _` | '_ ` _ \ / _ \| |
+| | | | | | \__ \  __/ |  | |_  | | | | (_| | | | | | |  __/| |
+| |_|_|_| |_|___/\___|_|   \__| |_| |_|\__,_|_| |_| |_|\___|| |
+|___|                                                     |___|""")
+
 #First messages
 
 title_card()
 
-print ("You play this game by typing your response into the terminal.")
+print ("You play this game by typing your response into the terminal.\n For this reason, please us an extented terminal for the best user experience.")
 time.sleep(2)
 print ("Press the enter key to continue.")
 time.sleep(1)
-print ("Type 'skip' then enter to skip the intro...")
+print ("Type 'skip' then enter to skip the intro.")
 
 #THE MAIN INTRO - The narrative messages
 narrative1 = [
@@ -131,7 +136,7 @@ for sentence in narrative1:
 
 time.sleep(1)
 
-#THE NAMES
+# NAME CHOOSING
 
 user_name = (input("What would you like to be called in this game? XD: " ))
 invalid_choice = True 
@@ -174,7 +179,7 @@ while invalid_choice == True:
 
 time.sleep(1)
 
-#CHECKS IF THEY HAVE PLAYED
+#CHECKS IF THEY HAVE PLAYED + STARTS THE TUTORIAL
 invalid_choice = True
 
 while invalid_choice == True:
@@ -197,6 +202,7 @@ while invalid_choice == True:
           case 2:
             TypeText("Coolio! Lemme help you get started! XD\n")
 
+            #THE TUTORIAL
             player_action1 = [ f"Select a to check on your friend {freddy_name}", 
                 "Select b to go downstairs",
             "Select c to outside",
@@ -266,6 +272,7 @@ while invalid_choice == True:
             while player_input != "g":
                 player_input = input("unidentifiable input please try again: ").lower()
             time.sleep(1)
+            #THE TUTORIAL ENDS
 
             invalid_choice = False
             break
@@ -274,18 +281,19 @@ while invalid_choice == True:
             print("1 or 2 bro XD")
             invalid_choice = True
 
-integrity =int(3)
-health = int(3)
-trust = int(3)
-supplies = int(3)
 
-print("\n Before you begin the day, let's take a look at your stats. \n These can decrease and increase during gameplay so try and make choices to keep them high.")
+print("\n Before you begin the day, let's take a look at your stats. \n These can decrease and increase during gameplay so try and make the BEST choices to keep them high.")
 
 time.sleep(1)
 
 stat_checker(integrity, health, trust, supplies)
 
-#THE DOCTOR EVENT
+title_line = open("title_line.txt", "r")
+print(title_line.read())
+title_line.close()
+time.sleep(1)
+
+#THE DOCTOR EVENT + THE SYSTEM TO ACCEPT HER/ REJECT
 
 def choice_doctor(invalid_choice, freddy_name, doctor, visitors):
   player_input = int(input("\nJuniper needs a place to stay... could you give her a room? Select 1 for yes, 2 for no. "))
@@ -441,10 +449,7 @@ def doctor_event(trust, freddy_name):
 
 # THE DOCTOR EVENT END
 
-title_line = open("title_line.txt", "r")
-print(title_line.read())
-title_line.close()
-
+#ALLOWS YOU TO SKIP THE DOCTOR EVENT OR GO THROUGH
 print("\n Knock, knock…\n" "Wait, what?")
 time.sleep(1)
 print("KNOCK, KNOCK, KNOCK…\n" "What was THAT?")
@@ -494,19 +499,34 @@ while invalid_choice == True:
             player_input = int(input("Press 1 to check what on earth caused noise; Press 2 to ignore it, you’ve got stuff to do "))
             invalid_choice = True
 
-#After_doctor_event
-
+#AFTER THE DOCTOR EVENT/ IF THE EVENT IS SKIPPED
+TypeText("The back garden seemed unusually appealing today, so you head over even though the air feels sub-zero.\n The chilling air soothes you just for a second, your muscles relax for the first time this day.")
+time.sleep(2)
+TypeText("The potato plants are wilting a little, though, and so are the courgettes. When was the last time you watered them?")
+time.sleep(2)
 invalid_input = True
 
-if trust == 4 and trust != 3 and trust != 2 and trust != 1:
+if trust == 4:
     TypeText("\nThe doctor could help out maybe; put them to work and have them show their worth?")
     time.sleep(1)
-    player_input = int(input("\nSelect 1 to water crops with Juniper, 2 to speak with Freddy"))
+    player_input = int(input(f"\nSelect 1 to water crops with Juniper, 2 to to water crops with {freddy_name}. \n"))
 
     while invalid_input == True:
         match player_input:
             case 1:
-                TypeText("You go to water the crops.")
+                TypeText("You go back inside the house to find Juniper. You spot her in the kitchen mixing up some kind of concoction.\n Multiple tin cans are spread out - opened and empty - around her.")
+                time.sleep(1)
+                TypeText("'Hey, there!' She goes over to you with a cup of whatever she was working on and hands it to you.\n 'This is packed with all the nutrients we'll need to survive these end-times, I don't believe you were getting enough before.'")
+                time.sleep(1)
+                TypeText("You open you mouth to say something but Juniper cuts you off. 'These little changes may use more supplies than usual but have no fear.'\n 'It's well worth it in the long run!' Juniper ends with a smile.")
+                time.sleep(1)
+                TypeText("Sighing, you take a slip. It's surprisingly pleasant but unusually thick.\n You ask her to join you outside and she reluctantly agrees.\n +1 supplies")
+                time.sleep(1)
+                TypeText("You're household's health has increased due to a healthier diet.\n +2 health")
+                health = health + 2
+                TypeText("The new diet is using your supplies faster... -1 supplies")
+                supplies = supplies - 1
+                print(f"Supplies now = {supplies}")
                 invalid_input = False
                 break
 
@@ -521,31 +541,7 @@ if trust == 4 and trust != 3 and trust != 2 and trust != 1:
                 invalid_input = True
                 break
 
-elif trust == 3 and trust !=2 and trust != 4 and trust != 1:
-    TypeText("\nBut you also have to check on the fences, you don’t want another determined visitor to scale them now do you?\n")
-    time.sleep(1)
-    player_input = int(input("\nSelect 1 to water crops, 2 check on fences"))
-
-    while invalid_input == True:
-
-        match player_input:
-            case 1:
-                TypeText("You go to water the crops.")
-                invalid_input = False
-                break
-
-            case 2:
-                TypeText("You go to check on the fences.")
-                invalid_input = False
-                break
-
-            case _:
-                print("Invalid input. Please enter 1 or 2.")
-                player_input = int(input("Select 1 to water crops, 2 check on fences"))
-                invalid_input = True
-                break
-
-elif trust == 2 and trust != 3 and trust != 4 and trust != 1:
+elif trust == 2:
     TypeText(f"\nBut maybe you should talk to {freddy_name} about what happened today. You don’t want them to stay upset with you.\n")
     time.sleep(1)
     player_input = int(input(f"Select 1 to water crops, 2 to speak with {freddy_name}"))
@@ -580,43 +576,89 @@ elif trust == 2 and trust != 3 and trust != 4 and trust != 1:
                 invalid_input =True
                 break
 
+#Management Situation/ EXTREME STORM EVENT
+
+random_number = random.randint(1,2)
+
+# First Management Situation Function
+def management_situation(integrity, health, freddy_name):
+    TypeText("Now that the day has nearly ended, take the opportunity to manage your household.\n" "Today, you have a choice between increase either your integrity stat or your health stat.")
+    if integrity > health: 
+      TypeText(f"\nThe health of your compound = {health} and needs to be increased the most.")
+      TypeText(f"\nintegrity = {integrity}")
+    elif integrity < health:
+      TypeText(f"\nThe integrity of your compound = {integrity} and needs to be increased the most.")
+      TypeText(f"\nHealth = {health}")
+
+    time.sleep(1)
+    TypeText("\nYou've noticed some animal holes have formed around the fences at the front of the house.\n" f"You could spend your evening with {freddy_name} patching up the holes to ensure the fences are as secure as possible.")
+    time.sleep(1)
+    TypeText("\nOr you can draft a new exercise program so that your household is remaining active.\n")
+    player_input = int(input("How do you want to spend your evening? Select 1 for repairing fences, select 2 for doing more exercise. \n"))
+  
+    invalid_input = True
+
+    while invalid_input == True:
+      match player_input:
+        case 1:
+          TypeText("You decide to repair the fences.\n")
+          if doctor == 1:
+            TypeText(f"\nYou rally {freddy_name} and Juniper together to help you out.\n It takes a while, especially because Juniper isn't used to manual labour, but you all get the job done before the sun goes down.")
+            time.sleep(1)
+            integrity = integrity + 1
+            TypeText(f"\n +1 integrity\n" f"Integrity now = {integrity}")
+            invalid_input = False
+            break          
+          else:
+            TypeText(f"\n You get {freddy_name} from the main house to repair the fences. \nIt takes a while, especially because it's been a long day for the both of you, but you all get the job done before the sun goes down.")
+            time.sleep(1)
+            integrity = integrity + 1
+            TypeText(f"\n +1 integrity\n" f"Integrity now = {integrity}")
+            invalid_input = False
+            break
+        case 2:
+          TypeText("You decide to put together an exercise routine.")
+          if doctor == 1:
+            TypeText("\nWith the help of Juniper, you create an exercise plan so that you can all improve your health.\n It takes a couple days to work plan into your routines, however.")
+            time.sleep(1)
+            health = health + 1
+            TypeText("\nBut, in the end, you all feel a lot healthier for it.\n +1 health \n" f"Health now = {health}")
+            invalid_input = False
+            break         
+          else:
+            TypeText("\nAfter a couple hours and a little bit of research, you are able create an exercise plan so that you can all improve your health.\n It takes a couple days to work plan into your routines,.")
+            time.sleep(1)
+            health = health + 1
+            TypeText("\nBut, in the end, you all feel a lot healthier for it.\n +1 health \n" f"Health now = {health}")                         
+            invalid_input = False
+            break
+
+        case _:
+          print("Invalid input.")
+          player_input = int(input("How do you want to spend your evening? Select 1 for repairing fences, select 2 for doing more exercise. \n"))
+          invalid_input = True
+# First Management Situation ENDS
+
+# First Management Situation/ EXTREME STORM EVENT
+
 random_number = random.randint(1,2)
 
 if random_number == 1:
-      # Management Situation
-      TypeText("Now that the day has nearly ended, take the opportunity to manage your household.\n" "Today, you have a choice between increase either your integrity stat or your health stat.")
-      if integrity > health: 
-            TypeText(f"\nThe integrity of your compound = {integrity} and needs to be increased the most.")
-            TypeText(f"\nHealth = {health}")
-            time.sleep(1)
-            TypeText("\nYou've noticed some animal holes have formed around the fences at the front of the house.\n" f"You could spend your evening with {freddy_name} patching up the holes with Fredrick to ensure the fences are as secure as possible.")
-            time.sleep(1)
-            TypeText("\nOr you can draft a new exercise program so that your household is remaining active.\n")
-            player_input = int(input("How do you want to spend your evening? Select 1 for repairing fences, select 2 for doing more exercise. \n"))
-            invalid_input = True
-
-            while invalid_input == True:
-                        match player_input:
-                            case 1:
-                                TypeText("You decide to repair the fences.")
-                                if doctor == 1:
-                                      TypeText(f"\n You rally {freddy_name} and Juniper together to repair the fences.\n It takes a while, especially because Juniper isn't used to manual labour, but you all get the job done before the sun goes down.")
-                                      time.sleep(1)
-                                      TypeText(f"\n +1 integrity\n" f"Integrity now = {integrity}")
-
-                                else:
-                                      TypeText(f"\n You get {freddy_name} from the main house to repair the fences. \n It takes a while, especially because it's been a long day for the both of you, but you all get the job done before the sun goes down.")
-                                      time.sleep(1)
-                                      TypeText(f"\n +1 integrity\n" f"Integrity now = {integrity}")
-                                      invalid_input = False
-                                      break
-
-                            case 2:
-                                invalid_input = False
-                                break
-
-                            case _:
-                                invalid_input = True
-
+  # Management Situation
+  management_situation(integrity, health, freddy_name)
+  
 elif random_number == 2: 
-      print("Your number was two.")
+  #THE.EXTREME.STORM.EVENT
+  if health >= 4 and integrity <= 3:
+
+    with open("storm.txt") as storm:
+      print(storm.read())
+
+    TypeText("\nAn extreme storm occured during the evening...\nYou have no choice but to huddle up inside you home until the storm ends.")
+    time.sleep(1)
+    integrity = integrity - 2
+    TypeText(f"\nA tree has fallen onto the fences in the northern section of your compound. \n-2 integrity \nIntegrity now = {integrity}")
+
+  else:
+    management_situation(integrity, health, freddy_name)
+      
