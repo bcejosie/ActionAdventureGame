@@ -1,0 +1,80 @@
+random_number = random.randint(1,2)
+
+# First Management Situation
+def management_situation(integrity, health, freddy_name):
+    TypeText("Now that the day has nearly ended, take the opportunity to manage your household.\n" "Today, you have a choice between increase either your integrity stat or your health stat.")
+    if integrity > health: 
+      TypeText(f"\nThe health of your compound = {health} and needs to be increased the most.")
+      TypeText(f"\nintegrity = {integrity}")
+    elif integrity < health:
+      TypeText(f"\nThe integrity of your compound = {integrity} and needs to be increased the most.")
+      TypeText(f"\nHealth = {health}")
+
+    time.sleep(1)
+    TypeText("\nYou've noticed some animal holes have formed around the fences at the front of the house.\n" f"You could spend your evening with {freddy_name} patching up the holes to ensure the fences are as secure as possible.")
+    time.sleep(1)
+    TypeText("\nOr you can draft a new exercise program so that your household is remaining active.\n")
+    player_input = int(input("How do you want to spend your evening? Select 1 for repairing fences, select 2 for doing more exercise. \n"))
+  
+    invalid_input = True
+
+    while invalid_input == True:
+      match player_input:
+        case 1:
+          TypeText("You decide to repair the fences.\n")
+          if doctor == 1:
+            TypeText(f"\nYou rally {freddy_name} and Juniper together to help you out.\n It takes a while, especially because Juniper isn't used to manual labour, but you all get the job done before the sun goes down.")
+            time.sleep(1)
+            integrity = integrity + 1
+            TypeText(f"\n +1 integrity\n" f"Integrity now = {integrity}")
+            invalid_input = False
+            break          
+          else:
+            TypeText(f"\n You get {freddy_name} from the main house to repair the fences. \nIt takes a while, especially because it's been a long day for the both of you, but you all get the job done before the sun goes down.")
+            time.sleep(1)
+            integrity = integrity + 1
+            TypeText(f"\n +1 integrity\n" f"Integrity now = {integrity}")
+            invalid_input = False
+            break
+        case 2:
+          TypeText("You decide to put together an exercise routine.")
+          if doctor == 1:
+            TypeText("\nWith the help of Juniper, you create an exercise plan so that you can all improve your health.\n It takes a couple days to work plan into your routines, however.")
+            time.sleep(1)
+            health = health + 1
+            TypeText("\nBut, in the end, you all feel a lot healthier for it.\n +1 health \n" f"Health now = {health}")
+            invalid_input = False
+            break         
+          else:
+            TypeText("\nAfter a couple hours and a little bit of research, you are able create an exercise plan so that you can all improve your health.\n It takes a couple days to work plan into your routines,.")
+            time.sleep(1)
+            health = health + 1
+            TypeText("\nBut, in the end, you all feel a lot healthier for it.\n +1 health \n" f"Health now = {health}")                         
+            invalid_input = False
+            break
+
+        case _:
+          print("Invalid input.")
+          player_input = int(input("How do you want to spend your evening? Select 1 for repairing fences, select 2 for doing more exercise. \n"))
+          invalid_input = True
+# First Management Situation ENDS
+
+if random_number == 1:
+  # Management Situation
+  management_situation(integrity, health, freddy_name)
+  
+elif random_number == 2: 
+  #THE.EXTREME.STORM.EVENT
+  if health >= 4 and integrity <= 3:
+
+    with open("storm.txt") as storm:
+      print(storm.read())
+
+    TypeText("\nAn extreme storm occured during the evening...\nYou have no choice but to huddle up inside you home until the storm ends.")
+    time.sleep(1)
+    integrity = integrity - 2
+    TypeText(f"\nA tree has fallen onto the fences in the northern section of your compound. \n-2 integrity \nIntegrity now = {integrity}")
+
+  else:
+    management_situation(integrity, health, freddy_name)
+      
