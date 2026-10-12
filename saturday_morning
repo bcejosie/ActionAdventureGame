@@ -1,0 +1,37 @@
+import time
+import sys
+import random
+
+# FUNTIONS AND VARIBLES FOR LATER USE 
+
+#STATS
+integrity =int(3)
+health = int(3)
+trust = int(3)
+supplies = int(3)
+
+#VISITORS
+visitors = 0
+doctor = 0
+
+#TYPE TEXT
+
+def TypeText(textToType):
+      for chars in textToType:
+            sys.stdout.write(chars)
+            sys.stdout.flush()
+            time.sleep(.03)
+
+#The Popular Girl  - This one acts as a thief rather than a helper (-supplies, -trust)
+#Does not provide any value to the household
+#Runs away with supplies while leaving a pathetic note
+#IF ci=3; only -trust as she cant carry the supplies over the high fence
+
+time.sleep(2)
+
+print("""
+--------------------------------------------
+--------- WEEK TWO: MONDAY MORNING ---------
+--------------------------------------------""")
+
+TypeText("The new morning sun pierces your eyes. As much as you would like to stay inside and sleep")
