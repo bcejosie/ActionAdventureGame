@@ -1,0 +1,153 @@
+import time
+import sys
+import random
+
+#STATS
+integrity =int(6)
+health = int(7)
+trust = int(3)
+supplies = int(3)
+
+#TYPE TEXT
+
+def TypeText(textToType):
+      for chars in textToType:
+            sys.stdout.write(chars)
+            sys.stdout.flush()
+            time.sleep(.03)
+
+freddy_name = "floppy flop"
+user_name = "juice"
+
+game_over = """
+ ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ 
+██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝
+██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
+                                                                          
+"""
+#Inforces maximum and minimum stat values
+def maximum_minimum_stat_values (integrity, health, trust, supplies):
+
+            #Inforces minimum stat values
+    if integrity <= 0:
+        TypeText("\nYour house has gotten so fragile over these few days.\nWhen you sneeze, the walls shudder as if they're going to collapse.")
+        time.sleep(1)
+        TypeText("\nThe fences don't look any better either, your gate is coming off it's hinges.")
+        time.sleep(1)
+        TypeText("\nUnforunatley, at at time when your compound could literally not be any less insecure, bandits found your property.")
+        time.text(1)
+        TypeText("\nThey took absolutely everything and left you with nothing.\nBecause of this, everyone starved to death in the matter of just a few days.")
+        time.text(2)
+        TypeText(f"{user_name} has died.\nYou have died.")
+        time.sleep(1)
+        print(f"{game_over}")
+        quit()
+       
+    if health <= 0:
+        TypeText("\nFor the last few days, your household has felt so weak you can barely stand.\nToday you have no energy to do anything but lie in bed.")
+        time.sleep(1)
+        TypeText("\nIt's been a long year or so hasn't it? Not much closer to finding out what happened to the world, are you?")
+        time.sleep(1)
+        TypeText("\nSuddenly, none of your questions seem to matter anymore.\nA huge weight is slowly drifting off your shoulders...")
+        time.sleep(1)
+        TypeText("\nNo other sequence of moments has ever really felt as peaceful.\nFinally - peace...")
+        time.sleep(2)
+        TypeText(f"{user_name} has fallen asleep in death.\nYou have died")
+        time.sleep(1)
+        print(f"{game_over}")
+        quit()
+                 
+    if trust <= 0:
+        TypeText("\nThe house has been really quiet latly - no one has said a word to you all week.\nYou want to speak to them but they always avoid being in the same room.")
+        time.sleep(1)
+        TypeText("\nIt's as if... they're afraid.\nYou haven't been a good leader in so long, you seem to be sabotaging yourselves.")
+        time.sleep(1)
+        TypeText(f"\nAnd something is brewing - you just don't know what it is.\nAt least {freddy_name} left you a cup of tea by your bed side.")
+        time.sleep(1)
+        TypeText(f"\nMaybe not everyone is against you after all...")
+        time.sleep(0.5)
+        with open("knife.txt") as knife:
+            print(knife.read())
+        time.sleep(0.5)
+        TypeText(f"{freddy_name} You just got backstabbed.\nThere were sleeping pills in the tea.")
+        time.sleep(1)
+        TypeText(f"{freddy_name} had become convinced that you were being impersonated by some madman due to your reckless leadership.")
+        time.text(2)
+        TypeText(f"{user_name} has died.\nYou have died.")
+        time.sleep(1)
+        print(f"{game_over}")
+        quit()
+    
+    if supplies <= 0:
+        TypeText("\nThere hasn't been anything to eat for several days.\nNow a light cold is circling the household and there isn't any medicine to give anyone.")
+        time.sleep(1)
+        TypeText("\nToday you have no energy to do anything but lie in bed.")
+        time.sleep(1)
+        TypeText("\nIt's been a long year or so hasn't it? Not much closer to finding out what happened to the world, are you?")
+        time.sleep(1)
+        TypeText("\nSuddenly, none of your questions seem to matter anymore.\nA huge weight is slowly drifting off your shoulders...")
+        time.sleep(1)
+        TypeText("\nNo other sequence of moments has ever really felt as peaceful.\nFinally - peace...")
+        time.sleep(2)
+        TypeText(f"{user_name} has fallen asleep in death.\nYou have died")
+        time.sleep(1)
+        print(f"{game_over}")
+        quit()
+        
+    time.sleep(2)
+    difference = 0
+    #Inforces maximum stat values
+    if supplies > 5:
+        
+        TypeText("\nWoah, you have just sooo many supplies!\nThe food and medical supplies are OVERFLOWING from the house.\nIt makes you wonder just how you got so much...")
+        time.sleep(1)
+        TypeText("\nAnyway, there's no way you can hold that many material items in the house. \nWhile doing a supply check, you notice some food has become rotten. \nSome medical suppies have also expired.")
+        time.sleep(1)
+        difference = supplies - 5
+        TypeText(f"\nYou throw them all away, of course. We don't want anyone getting sick now, do we? -{difference}\n")
+        time.sleep(1)
+        print(f"Supplies before = {supplies}")
+        supplies = int(5)
+        print (f"Supplies now = {supplies}")
+
+    if health > 5:
+        TypeText(f"\nYour household has never felt better, really and truly.\nEven {freddy_name} has been saying they feel better now than they did before the apocolypse.'")
+        time.sleep(1)
+        TypeText("\nHow on earth did you all get so healthy?\nThat doesn't matter anyway. A light cold circles through your household.")
+        time.sleep(1)
+        difference = health - 5
+        TypeText(f"\nIt doesn't do too much damage but none of you feel as good as you did last night. -{difference}\n")
+        time.sleep(1)
+        print(f"Health before = {health}")
+        health = int(5)
+        print (f"Health now = {health}")
+
+    if trust > 5:
+        TypeText(f"\nYour household just can't believe how great you are at leading!\n It's almost too good to be true...")
+        time.sleep(1)
+        TypeText(f"\n{freddy_name} joked that you've been replaced by an imposter who was magically good at leadership.\nOr maybe they weren't joking?")
+        time.sleep(1)
+        difference = trust - 5
+        TypeText(f"It's a weird paradox - while trying to make people trust you, you've become less trustworthy. -{difference}")
+        time.sleep(1)
+        print(f"Trust before = {trust}")
+        health = int(5)
+        print (f"Trust now = {trust}")
+
+    if integrity > 5:
+        TypeText(f"\nYour compound is absolutley impenetrable.\nNothing short of a missile would be able to make a dent in the huge fences you've fortified.")
+        time.sleep(1)
+        TypeText(f"In fact, it's become just as difficult to leave as it is to enter.\nThere's no way you'll be able to rob the neighbours if you're stuck in your own house.")
+        time.sleep(1)
+        difference = integrity - 5
+        TypeText(f"For this reason, you and {freddy_name} decide to take some of the fencing down.\nNow you can finally leave! -{difference}")
+        time.sleep(1)
+        print(f"Integrity before = {integrity}")
+        health = int(5)
+        print (f"Integrity now = {integrity}")
+
+
+maximum_minimum_stat_values(integrity, health, trust, supplies)
