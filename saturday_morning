@@ -12,8 +12,7 @@ supplies = int(3)
 
 #VISITORS
 visitors = 0
-doctor = 0
-
+doctor = True
 #TYPE TEXT
 
 def TypeText(textToType):
@@ -21,7 +20,7 @@ def TypeText(textToType):
             sys.stdout.write(chars)
             sys.stdout.flush()
             time.sleep(.03)
-
+freddy_name = "sticky"
 #The Popular Girl  - This one acts as a thief rather than a helper (-supplies, -trust)
 #Does not provide any value to the household
 #Runs away with supplies while leaving a pathetic note
@@ -30,8 +29,38 @@ def TypeText(textToType):
 time.sleep(2)
 
 print("""
---------------------------------------------
---------- WEEK TWO: MONDAY MORNING ---------
---------------------------------------------""")
+============================================
+========= WEEK TWO: MONDAY MORNING =========
+============================================""")
 
-TypeText("The new morning sun pierces your eyes. As much as you would like to stay inside and sleep")
+TypeText("\nThe new morning sun pierces your eyes as you lie in bed.\nAs much as you would like to stay inside and sleep, there is, as always work, to do.\n")
+time.sleep(1)
+player_input = input("Get up? (yes/no) ")
+if player_input == "yes":
+      TypeText("\nPushing away the urge to sleep, you sit up and make your way downstairs.\nNo one is downstrairs. Perfect, time to organise all the chores and tasks to keep this house running.\n")
+elif player_input == "no":
+      TypeText(f"\nYou continue lieing in bed. It's remarkably peaceful.\nUnfortunatley, this peace doesn't last too long as {freddy_name} starts yelping while trying to take a cold bath.\nTime to get up, after all.\n")
+
+if doctor == True:
+      TypeText("'Good moooorning!' You find Juniper outside doing her morning yoga.\n'Care to join me?' You politely decline, of course.")
+      time.sleep(1)
+      TypeText("\nYou didn't come outside to socialize, you need to collect last night's rainwater.\nLike Juniper would pay attention to any of that.")
+      time.sleep(1)
+      TypeText("\nWhile she is amazing at forming balanced diets with all the canned rubbbish you have, she isn't the best at anticipating the rest of what goes into caring for a household.")
+      time.sleep(1)
+      TypeText(f"\nAlthough, it is admirable that she trys her best to participate in  more manual labour \nAfter a week of living here, you two mutually agreed to keep her out of fence repairs and let her focus on whatever would keep the house healthy.")
+      time.sleep(1)
+      TypeText(f"\nIts surprising ow well she fits in the house, all in all.\nHer being here has defimitely made this compound feel... warmer.")
+      time.sleep(1)
+else:
+      TypeText("Since the first few weeks of the world shutting down, you've had this simple routine.\nEven when your world collapsed and people started to mindlessly move through the streets.\nEven when your own parents didn't recoginse their own child standing right in front of them...")
+      time.sleep(2)
+      TypeText("\nIts easier to have a routine.\nYou've always checked the fences at the north, south, east and west of the compound.\nThen you would collect water from the barrels at the back of the house.")
+      time.sleep(1)
+      TypeText("\nIts a crud system of collecting rainwater, but its worked for you this long.\.Don't fix it if it ain't broke.")
+
+player_input = input("Select f to go back inside. ").lower()
+while player_input != "f":
+      player_input = input("unidentifiable input - please try again: ").lower()
+
+
