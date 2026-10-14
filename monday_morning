@@ -13,6 +13,7 @@ supplies = int(3)
 #VISITORS
 visitors = 0
 doctor = True
+user_name = "bello nico"
 #TYPE TEXT
 
 def TypeText(textToType):
@@ -105,38 +106,88 @@ while invalid_choice == True:
             time.sleep(2)
             TypeText(f"\nAbout half an hour into your sleep {freddy_name} calls you downstairs to eat the bigger meals they've prepared for that day.")
             time.sleep(2)
-            TypeText("And they say you need to talk. Great.")
+            TypeText("\nAnd they say you need to talk. Great.")
             invalid_choice = False
             break
           
         case 2:
-            TypeText(f"Another visitor... how? Why? How do they keep finding you?\n {freddy_name}'s home is in the middle of nowhere.")
+            TypeText(f"\nAnother visitor... how? Why? How do they keep finding you?\n {freddy_name}'s home is in the middle of nowhere.")
             time.sleep(1)
-            TypeText(f"You're stunned speechless. The person at the door fiddles and twirls at their hair.\nAfter what feels like too long to spend in slience, they open their mouth.")
+            TypeText(f"\nYou're stunned speechless. The person at the door fiddles and twirls at their hair.\nAfter what feels like too long to spend in slience, they open their mouth.")
             time.sleep(2)
-            TypeText("'I was going to knock, you know? Its like you were expecting me or something!'\nThey smile awkwardly and continue fiddling. You still don't say anything.")
+            TypeText("\n'I was going to knock, you know? Its like you were expecting me or something!'\nThey smile awkwardly and continue fiddling. You still don't say anything.")
             time.sleep(1)
-            TypeText("Your visitor looks at you expectantly but you keep your mouth shut.\nAfter another long pause, they start speaking again.")
+            TypeText("\nYour visitor looks at you expectantly but you keep your mouth shut.\nAfter another long pause, they start speaking again.")
             time.sleep(1)
-            TypeText("'Ummmm, my name is Lucia but my friends call me Lulu. That was when I even had friends, I suppose...'\n Pause.")
+            TypeText("\n'Ummmm, my name is Lucia but my friends call me Lulu. That was when I even had friends, I suppose...'\n Pause.")
             time.sleep(1)
-            TypeText("'Your house looks pretty big, huh?\nI-I like your fences, they're really high aren't they?\nThe barbed wire on the gate was a nice touch just a little difficult to climb over.'")
+            TypeText("\n'Your house looks pretty big, huh?\nI-I like your fences, they're really high aren't they?\nThe barbed wire on the gate was a nice touch just a little difficult to climb over.'")
             time.sleep(2)
             player_input = int(input("Select 1 for: 'who are you?'; select 2 for 'why are you here?' "))
             invalid_choice = True
             while invalid_choice == True:
                  match player_input:
                       case 1:
-                        TypeText(">Who are you?")
+                        TypeText("\n>'Who are you?'\nThe stranger abrupts stop talking and her hands drop from her hair.")
+                        time.sleep(1)
+                        TypeText("\n'I'm Lulu. Hahaha, yeah, I'm Lulu Georgie.'\nHer hands shoot straight up to her hair again.\nThe way she speaks is hard to take seriously.")
+                        time.sleep(1)
+                        TypeText("\n'Who are you? Yeah, I don't even know who you are.'\nThe person at the door won't stop shaking and wafting and flicking her hair. \nIts strange, the way this conversation is going, you wish you'd just shut the door a while ago.")
+                        time.sleep(2)
+                        player_input = int(input(f"Select 1 for: 'I'm {user_name}'; select 2 for 'why are you here?' "))
+                        invalid_choice = True
+                        while invalid_choice == True:
+                             match player_input:
+                                  case 1:
+                                    TypeText(f"\n>'I'm, ummmm, {user_name}. My name is {user_name}.'")
+                                    time.sleep(1)
+                                    if doctor == True:
+                                          TypeText(f"\nIt seems strange that it was just last week that you were introducing yourself to Juni and now you have to do it all over again.")
+                                    time.sleep(1)
+                                    TypeText(f"\nIs she going to repeat whatever question you ask?\nLet's try that out:")
+                                    invalid_choice == True
+                                    player_input = int(input(f"Select 1 for: 'why are you here?'; select 2 for 'how did you get here?' "))
+                                    while invalid_choice == True:
+                                          match player_input:
+                                                case 1:
+                                                    TypeText("'> How did you get here?'")
+                                                      
+                                                case 2:
+                                                    TypeText("Hieyyy")
+
+                                                case _:
+
+                                    time.sleep(1)
+                                    invalid_choice = False
+                                    break
+                                  
+                                  case 2:
+
+
+
+
+                                    invalid_choice = False
+                                    break                     
+                                  case _:
+
+
+
+
+                                    invalid_choice = True
+                        
                         invalid_choice = False
                         break
 
                       case 2:
+                        TypeText("> Why are you here?")
+
                         invalid_choice = False
                         break                      
+                      
                       case _:
-                        invalid_choice = False
-                        break
+                        print("Invalid input. Please enter 1 or 2.")
+                        player_input = int(input(f"Select 1 for: 'I'm {user_name}'; select 2 for 'why are you here?' "))
+                        invalid_choice = True
                       
             invalid_choice = False
             break
