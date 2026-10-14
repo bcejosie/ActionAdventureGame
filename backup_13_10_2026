@@ -488,10 +488,8 @@ def choice_doctor(invalid_choice, trust, freddy_name, doctor, visitors):
           invalid_choice == True
 
 def doctor_event(trust, freddy_name):
-    the_doctor = open("the_doctor.txt", "r")
-    print(the_doctor.read())
-    the_doctor.close()
-
+     with open("the_doctor.txt") as the_doctor:
+         print(the_doctor.read())
     TypeText("The person at the door... looks strange.\n" "That could be because you haven’t seen another person in over a year.")
     time.sleep(1)
     TypeText("\nEven so, she seems unusually polished, like she’s on her way to work rather than a survivor of a worldwide apocalypse.\n" "There’s a something pinned to her blazer, something you haven’t seen in a long time: DR.")
