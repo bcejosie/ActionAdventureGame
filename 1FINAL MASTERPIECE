@@ -549,6 +549,10 @@ def doctor_event(trust, freddy_name):
     time.sleep(1)
     TypeText("\n'I am - or, was a doctor... That was all, of course, before the whole world collapsed in on herself...'" "\nAs she goes on and on, you notice a couple suitcases placed behind her.")
     time.sleep(1)
+    with open("suitcases.txt") as suitcases:
+        print(suitcases.read())
+    time.sleep(1)
+    time.sleep(1)
     TypeText("\nEven though she obviously took care of her appearance before getting to your door, she still seems worn out and tired.\n The doctor's well trimmed hands had specks of dirt and her fingernails were stuffed with green.\n")
     time.sleep(2)
     player_input = int(input("1. Slam the door in her face    2. Ask where she is from --> \n"))
@@ -603,7 +607,7 @@ def doctor_event(trust, freddy_name):
                   time.sleep(2)
                   TypeText("\n'Do you know what happened to us - to our world?' Juniper wipes her eyes and looks to you, for an answer.\n" "'> No, I don't know what happened... I'm still trying to find that out too.'")
                   time.sleep(2)
-                  TypeText("\nYou both stand in silence for a second, considering the weight of what's happened to both of your lives.\n Juniper is right. The world just paused out of nowhere and the next thing you see on the streets is complete anarchy.")
+                  TypeText("\nYou both stand in silence for a second, considering the weight of what's happened to both of your lives.\n Juniper is right. The world just paused out of nowhere and the next thing you see on the streets is complete anarchy.\n")
                   time.sleep(2)
 
                   choice_doctor(invalid_choice, trust, freddy_name, doctor, visitors)
@@ -620,7 +624,7 @@ def doctor_event(trust, freddy_name):
                   time.sleep(1)
                   TypeText("'I was so scared I just grabbed the suitcases I had stashed in case of an emergency and rushed out of my flat.'\n" "'I guess the strange thing is that they didn't follow me or anything like that. Even though there was about 20 odd of them.'")
                   time.sleep(1)
-                  TypeText("\n'They seemed a lot more interested in all the canned food in the house than myself so I took the opportunity to get away.'\n" "'From my flat... the place I had called home for nearly a year.'")
+                  TypeText("\n'They seemed a lot more interested in all the canned food in the house than myself so I took the opportunity to get away.'\n" "'From my flat... the place I had called home for nearly a year.'\n")
 
                   choice_doctor(invalid_choice, trust, freddy_name, doctor, visitors)
 
