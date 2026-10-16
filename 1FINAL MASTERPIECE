@@ -215,11 +215,12 @@ while invalid_choice == True:
             time.sleep(2)
 
             time.sleep(1)
+            print("\n")
             with open("title_line.txt") as title_line:
                 print(title_line.read())
             time.sleep(2)
 
-            print("""
+            print("""\n
             ============================================
             ========= WEEK ONE: MONDAY MORNING =========
             ============================================
@@ -306,8 +307,9 @@ while invalid_choice == True:
             player_input = input(" --> ").lower()
             while player_input != "g":
                 player_input = input("Unidentifiable input - please try again: --> ").lower()
-            time.sleep(1)
 
+            time.sleep(1)
+            print("\n")
             with open("title_line.txt") as title_line:
                 print(title_line.read())
             time.sleep(2)
@@ -317,7 +319,7 @@ while invalid_choice == True:
             ========= WEEK ONE: MONDAY MORNING =========
             ============================================
             """)
-
+            time.sleep(1)
 
             #THE TUTORIAL ENDS
 
@@ -345,7 +347,7 @@ while invalid_choice == True:
     elif player_input == "motherlode":
         print("Hahahah, how did you find this?")
         time.sleep(1)
-        print("Okay, good job finding this, you can have 100000 of alllll stats and you get to skip stat checks.")
+        print("Okay, I'll admit it - good job. You can have 100000 of alllll stats and you get to skip stat checks.")
         time.sleep(2)
         integrity =int(100000)
         health = int(100000)
@@ -364,7 +366,6 @@ time.sleep(2)
 
 #Inforces minimum stat values starts
 def maximum_minimum_stat_values (integrity, health, trust, supplies):
-
             #Inforces minimum stat values
     if integrity <= 0:
         TypeText("\nYour house has gotten so fragile over these few days.\nWhen you sneeze, the walls shudder as if they're going to collapse.")
@@ -500,7 +501,7 @@ def choice_doctor(invalid_choice, trust, freddy_name, doctor, visitors):
           time.sleep(2)
           TypeText("\nJuniper grabs the suitcases that was left previously ignored behind her and storms into the house.\n" f"{freddy_name} appears behind you and helps the new resident with her luggage.\n")
           time.sleep(2)
-          TypeText("What have you done...\n")
+          TypeText("\nWhat have you done...\n")
           print("\n+1 Trust")
           trust = trust + 1
           print (f"Trust = {trust}")
@@ -537,7 +538,7 @@ def doctor_event(trust, freddy_name):
     with open("the_doctor.txt") as the_doctor:
         print(the_doctor.read())
     time.sleep(1)
-    TypeText("The person at the door... looks strange.\n" "That could be because you haven’t seen another person in over a year.")
+    TypeText("\nThe person at the door... looks strange.\n" "That could be because you haven’t seen another person in over a year.")
     time.sleep(2)
     TypeText("\nEven so, she seems unusually polished, like she’s on her way to work rather than a survivor of a worldwide apocalypse.\n" "There’s a something pinned to her blazer, something you haven’t seen in a long time: DR.")
     time.sleep(1)
@@ -547,7 +548,7 @@ def doctor_event(trust, freddy_name):
     time.sleep(1)
     TypeText("\n'My name is Juniper.' You continue to stare at her blankly. A minute or so passes.")
     time.sleep(1)
-    TypeText("\n'I am - or, was a doctor... That was all, of course, before the whole world collapsed in on herself...'" "\nAs she goes on and on, you notice a couple suitcases placed behind her.")
+    TypeText("\n'I am - or, was a doctor... That was all, of course, before the whole world collapsed in on herself...'" "\nAs she goes on and on, you notice a couple suitcases placed behind her.\n")
     time.sleep(1)
     with open("suitcases.txt") as suitcases:
         print(suitcases.read())
@@ -555,7 +556,7 @@ def doctor_event(trust, freddy_name):
     time.sleep(1)
     TypeText("\nEven though she obviously took care of her appearance before getting to your door, she still seems worn out and tired.\n The doctor's well trimmed hands had specks of dirt and her fingernails were stuffed with green.\n")
     time.sleep(2)
-    player_input = int(input("1. Slam the door in her face    2. Ask where she is from --> \n"))
+    player_input = int(input("1. Slam the door in her face    2. Ask where she is from \n--> "))
     invalid_choice = True
 
     while invalid_choice == True:
@@ -563,9 +564,9 @@ def doctor_event(trust, freddy_name):
       match player_input:
          
           case 1:
-            print("You slam the door in her face.\n")
+            print("\nYou slam the door in her face.\n")
             time.sleep(1)
-            TypeText("Obviously, after all this time, you're too stunned to even explore the possibilities of this situation.\n" "You've been comfortable and safe for over a year by keeping youreslf shut in, why stop now?")
+            TypeText("\nObviously, after all this time, you're too stunned to even explore the possibilities of this situation.\n" "You've been comfortable and safe for over a year by keeping youreslf shut in, why stop now?")
             time.sleep(1)
             TypeText("\nYou’ve got work to do. And who knows if Juniper was lying, if that even is her name.\n" "There was something off about her, you're sure of it.")
             time.sleep(1)
@@ -578,7 +579,7 @@ def doctor_event(trust, freddy_name):
             break
 
           case 2:
-            TypeText(">'Where are you from?' You hear yourself asking." "\nJuniper's faint smile grows even wider and you sense a little spark light up in her eyes.")
+            TypeText("\n>'Where are you from?' You hear yourself asking." "\nJuniper's faint smile grows even wider and you sense a little spark light up in her eyes.")
             time.sleep(2)
             TypeText("\n'Well, yes, of course, I'd have to tell you that! Isn't it a bit strange that I come from absolutley nowhere?!'" "\n Juniper laughs dryly and you can sense your patience running thinner by the second.")
             time.sleep(2)
@@ -665,19 +666,19 @@ while invalid_choice == True:
     
     match player_input:
         case 1:
-            TypeText("There’s…\n" "There’s a person there…\n")
+            TypeText("\nThere’s…\n" "There’s a person there…\n")
             time.sleep (1)
-            TypeText(f"You haven’t seen another person other than {freddy_name} in what feels like forever. You almost start shaking, you’re so surprised.\n")
+            TypeText(f"\nYou haven’t seen another person other than {freddy_name} in what feels like forever. You almost start shaking, you’re so surprised.\n")
             player_input = int(input("Do you wanna answer the door? yes = 1, no = 2 --> "))
             match player_input:
                 case 1:
-                    doctor_event()
                     time.sleep(1)
-                    TypeText("You slowly step back from the window you were observing the stranger from.\n")
+                    TypeText("\nYou slowly step back from the window you were observing the stranger from.\n")
                     time.sleep(1)
+                    doctor_event(trust, freddy_name)
                     break
                 case 2:
-                    TypeText("You decide to ignore them and continue with your day.\nSome things are better off being avoided.")
+                    TypeText("\nYou decide to ignore them and continue with your day.\nSome things are better off being avoided.")
                     time.sleep(1)
                     trust = trust - 1
                     TypeText(f"\n{freddy_name} appears behind you, they don't seems to happy with you avoiding the unknown visitor...\n-1 trust\nTrust now = {trust}\n")
@@ -689,7 +690,7 @@ while invalid_choice == True:
                     invalid_choice = True
 
         case 2:
-            TypeText("You continue making plans for the day but your friend has a mind of their own.\n" "When did they get out of bed? Goodness knows...")
+            TypeText("\nYou continue making plans for the day but your friend has a mind of their own.\n" "When did they get out of bed? Goodness knows...")
             time.sleep(1)
             TypeText("\nAll you’re aware of is the fact that they opened the door to check whatever is making the ruckus outside...")
             time.sleep(1)
@@ -710,6 +711,7 @@ while invalid_choice == True:
 
 #AFTER THE DOCTOR EVENT/ IF THE EVENT IS SKIPPED
 time.sleep(1)
+print("\n")
 with open("title_line.txt") as title_line:
     print(title_line.read())
 time.sleep(1)
@@ -741,17 +743,17 @@ if trust == 4:
     while invalid_input == True:
         match player_input:
             case 1:
-                TypeText("You go back inside the house to find Juniper. You spot her in the kitchen mixing up some kind of concoction.\n Multiple tin cans are spread out - opened and empty - around her.")
+                TypeText("\nYou go back inside the house to find Juniper. You spot her in the kitchen mixing up some kind of concoction.\n Multiple tin cans are spread out - opened and empty - around her.")
                 time.sleep(1)
-                TypeText("'Hey, there!' She goes over to you with a cup of whatever she was working on and hands it to you.\n 'This is packed with all the nutrients we'll need to survive these end-times, I don't believe you were getting enough before.'")
+                TypeText("\n'Hey, there!' She goes over to you with a cup of whatever she was working on and hands it to you.\n 'This is packed with all the nutrients we'll need to survive these end-times, I don't believe you were getting enough before.'")
                 time.sleep(1)
-                TypeText("You open you mouth to say something but Juniper cuts you off. 'These little changes may use more supplies than usual but have no fear.'\n 'It's well worth it in the long run!' Juniper ends with a smile.")
+                TypeText("\nYou open you mouth to say something but Juniper cuts you off. 'These little changes may use more supplies than usual but have no fear.'\n 'It's well worth it in the long run!' Juniper ends with a smile.")
                 time.sleep(1)
-                TypeText("Sighing, you take a slip. It's surprisingly pleasant but unusually thick.\n You ask her to join you outside for watering and she reluctantly agrees.\n +1 supplies")
+                TypeText("\nSighing, you take a slip. It's surprisingly pleasant but unusually thick.\n You ask her to join you outside for watering and she reluctantly agrees.\n +1 supplies")
                 time.sleep(1)
-                TypeText("You're household's health has increased due to a healthier diet.\n +2 health")
+                TypeText("\nYou're household's health has increased due to a healthier diet.\n +2 health")
                 health = health + 2
-                print(f"Health now = {health}")
+                print(f"\nHealth now = {health}")
                 TypeText("The new diet is using up your supplies faster... -1 supplies")
                 supplies = supplies - 1
                 print(f"Supplies now = {supplies}")
@@ -827,7 +829,7 @@ random_number = random.randint(1,2)
 
 # First Management Situation Function
 def management_situation(integrity, health, freddy_name):
-    TypeText("Now that the day has nearly ended, take the opportunity to manage your household.\n" "Today, you have a choice between increase either your integrity stat or your health stat.")
+    TypeText("\nNow that the day has nearly ended, take the opportunity to manage your household.\n" "Today, you have a choice between increase either your integrity stat or your health stat.")
     if integrity > health: 
       TypeText(f"\nThe health of your compound = {health} and needs to be increased the most.")
       TypeText(f"\nintegrity = {integrity}")
@@ -839,14 +841,14 @@ def management_situation(integrity, health, freddy_name):
     TypeText("\nYou've noticed some animal holes have formed around the fences at the front of the house.\n" f"You could spend your evening with {freddy_name} patching up the holes to ensure the fences are as secure as possible.")
     time.sleep(1)
     TypeText("\nOr you can draft a new exercise program so that your household is remaining active.\n")
-    player_input = int(input("How do you want to spend your evening? Select 1 for repairing fences, select 2 for doing more exercise. --> \n"))
+    player_input = int(input("How do you want to spend your evening? Select 1 for repairing fences, select 2 for doing more exercise.\n--> "))
   
     invalid_input = True
 
     while invalid_input == True:
       match player_input:
         case 1:
-          TypeText("You decide to repair the fences.\n")
+          TypeText("\nYou decide to repair the fences.\n")
           if doctor == True:
             TypeText(f"\nYou rally {freddy_name} and Juniper together to help you out.\n It takes a while, especially because Juniper isn't used to manual labour, but you all get the job done before the sun goes down.")
             time.sleep(1)
@@ -855,14 +857,14 @@ def management_situation(integrity, health, freddy_name):
             invalid_input = False
             break          
           else:
-            TypeText(f"\n You get {freddy_name} from the main house to repair the fences. \nIt takes a while, especially because it's been a long day for the both of you, but you all get the job done before the sun goes down.")
-            time.sleep(1)
+            TypeText(f"\nYou get {freddy_name} from the main house to repair the fences. \nIt takes a while, especially because it's been a long day for the both of you, but you all get the job done before the sun goes down.")
+            time.sleep(2)
             integrity = integrity + 1
             TypeText(f"\n+1 integrity\n" f"Integrity now = {integrity}")
             invalid_input = False
             break
         case 2:
-          TypeText("You decide to put together an exercise routine.")
+          TypeText("\nYou decide to put together an exercise routine.")
           if doctor == True:
             TypeText("\nWith the help of Juniper, you create an exercise plan so that you can all improve your health.\n It takes a couple days to work plan into your routines, however.")
             time.sleep(1)
@@ -912,7 +914,7 @@ time.sleep(1)
 TypeText("\nThat is why at the end of every Sunday or Monday, your supplies decrease by - 1")
 supplies = supplies - 1
 time.sleep(1)
-TypeText(f"\nSupplies now = {supplies}")
+TypeText(f"\nSupplies now = {supplies}\n")
 
 if motherlode == True:
     time.sleep(1)
@@ -924,6 +926,7 @@ else:
 #WEEK ONE SUNDAY MORNING
 
 time.sleep(1)
+print("\n")
 with open("title_line.txt") as title_line:
     print(title_line.read())
 
@@ -938,7 +941,6 @@ print("""
 supplies = supplies - 1
 time.sleep(1)
 TypeText(f"\nSupplies now = {supplies}")
-management_situation(integrity, health, freddy_name)
 player_input = input("\nWould you like to check your stats before you continue with the day? Type s to reveal supplies or type no. --> ")
 
 invalid_input = True
@@ -966,7 +968,7 @@ if trust>= 4 and health>= 3:
 
 else:
     #GOOD BOX EVENT
-    print(f"'{user_name}!' It's {freddy_name} - it's coming from the front door.\n'There's... some kind of box.\n'")
+    print(f"'{user_name}!' It's {freddy_name} - it's coming from the front door.\n'There's... some kind of box.'\n")
     time.sleep(2)
     with open("gift.txt") as gift:
         print(gift.read())
@@ -1034,6 +1036,7 @@ else:
 time.sleep(2)
 
 time.sleep(1)
+print("\n")
 with open("title_line.txt") as title_line:
     print(title_line.read())
 time.sleep(1)
@@ -1077,22 +1080,22 @@ def choice_popular(player_input, freddy_name, trust, popular):
                 break
 
             case 2:
-                TypeText("> 'We don't need any of what you've got.'\nHer face drops and for the first time she stands completely still.")
+                TypeText("\n> 'We don't need any of what you've got.'\nHer face drops and for the first time she stands completely still.")
                 time.sleep(1)
-                TypeText("'What?'\n> 'I appreciate that its quite a journey to get here but we have enough mouths to feed.'")
+                TypeText("\n'What?'\n> 'I appreciate that its quite a journey to get here but we have enough mouths to feed.'")
                 time.sleep(1)
-                TypeText("You stay at the door, ready to shut it when she turns away but the stranger just stays there.\n'Do you know who I am?'")
+                TypeText("\nYou stay at the door, ready to shut it when she turns away but the stranger just stays there.\n'Do you know who I am?'")
                 time.sleep(1)
-                TypeText("What?\n> 'What?'")
+                TypeText("\nWhat?\n> 'What?'")
                 time.sleep(0.5)
-                TypeText("'I said: do YOU know who I am?!'\nYou act a step back. The stranger's face is turning red and her whole body is quivering.")
+                TypeText("\n'I said: do YOU know who I am?!'\nYou act a step back. The stranger's face is turning red and her whole body is quivering.")
                 time.sleep(1)
-                TypeText("'I AM LUCIA, I SAID LUCIA GEORGIE!\nHOW DARE YOU REJECT SOMEONE IN NEED! I AM-'")
+                TypeText("\n'I AM LUCIA, I SAID LUCIA GEORGIE!\nHOW DARE YOU REJECT SOMEONE IN NEED! I AM-'\n")
                 print("You slam the door in her face.")
                 time.sleep(2)
-                TypeText("You should have done that from time to be very honest.\nThat conversation was beyond awkward and infuriating.")
+                TypeText("\nYou should have done that from time to be very honest.\nThat conversation was beyond awkward and infuriating.")
                 time.sleep(1)
-                TypeText(f"Anyways, time to find {freddy_name}.\nMaybe you should've run the visitor by {freddy_name} first...")
+                TypeText(f"\nAnyways, time to find {freddy_name}.\nMaybe you should've run the visitor by {freddy_name} first...")
                 invalid_choice = False
                 break
 
@@ -1347,8 +1350,11 @@ while invalid_choice == True:
             player_input = int(input("Select 1 to slam the door in their face; select 2 to do nothing. --> "))
             invalid_choice = True
 
+time.sleep(1)
+print("\n")
 with open("title_line.txt") as title_line:
     print(title_line.read())
+time.sleep(1)
 
 if motherlode == True:
     time.sleep(1)
